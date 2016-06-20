@@ -11,7 +11,7 @@ rule "value <= 3.9"
 		$r : Record( value <= 3.9 )
 	then
 		modify($r) {
-		    level = 0
+		    level = 0;
 		  //  update($r);
 		}
 end
@@ -25,7 +25,7 @@ rule "3.9 < value <= 4.4"
 		$r : Record( value <= 4.4 , value > 3.9 )
 	then
 		modify($r) {
-		    level = 1
+		    level = 1;
 		  //  update($r);
 		}
 end
@@ -39,7 +39,7 @@ rule "4.4 < value <= 7.0"
 		$r : Record( value <= 7.0 , value > 4.4 )
 	then
 		modify($r) {
-		    level = 2
+		    level = 2;
 		  //  update($r);
 		}
 end
@@ -53,7 +53,7 @@ rule "7.0 < value <= 16.7"
 		$r : Record( value <= 16.7 , value > 7.0 )
 	then
 		modify($r) {
-		    level = 3
+		    level = 3;
 		  //  update($r);
 		}
 end
@@ -67,7 +67,7 @@ rule "value > 16.7"
 		$r : Record( value > 16.7 )
 	then
 		modify($r) {
-		    level = 4
+		    level = 4;
 		  //  update($r);
 		}
 end
