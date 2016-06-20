@@ -10,7 +10,9 @@ rule "fbg count"
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
 	then
-	    $s.setFbgCount( $s.getFbgCount() + $count );
+	    modify($s) {
+	        setFbgCount( $s.getFbgCount() + $count );
+	    }
 end
 
 //fbg normal count
@@ -23,7 +25,9 @@ rule "fbg normal count"
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
     then
-	    $s.setFbgNormalCount( $s.getFbgNormalCount() + $count );
+	    modify($s) {
+	        setFbgNormalCount( $s.getFbgNormalCount() + $count );
+	    }
 end
 
 //2 hpg count
@@ -36,7 +40,9 @@ rule "2 hpg count"
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
 	then
-	    $s.setTwoHpgCount( $s.getTwoHpgCount() + $count );
+	    modify($s) {
+	        setTwoHpgCount( $s.getTwoHpgCount() + $count );
+	    }
 end
 
 //2 hpg normal count
@@ -49,5 +55,7 @@ rule "2 hpg normal count"
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
     then
-	    $s.setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + $count );
+	    modify($s) {
+	        setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + $count );
+	    }
 end
