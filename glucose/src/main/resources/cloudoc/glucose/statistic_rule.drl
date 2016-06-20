@@ -6,6 +6,7 @@ lock-on-active true
 //fbg count
 rule "fbg count"
     ruleflow-group "statistic"
+    lock-on-active true
 
 	when
 	    $s : Statistic()
@@ -19,6 +20,7 @@ end
 rule "fbg normal count"
     // extends "fbg count"
     ruleflow-group "statistic"
+    lock-on-active true
 
     when
         $s : Statistic()
@@ -31,6 +33,7 @@ end
 //2 hpg count
 rule "2 hpg count"
     ruleflow-group "statistic"
+    lock-on-active true
 
 	when
 	    $s : Statistic()
@@ -44,6 +47,7 @@ end
 rule "2 hpg normal count"
     // extends "2 hpg count"
     ruleflow-group "statistic"
+    lock-on-active true
 
     when
         $s : Statistic()
