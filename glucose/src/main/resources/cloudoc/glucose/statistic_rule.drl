@@ -4,15 +4,15 @@ package cloudoc.glucose;
 rule "fbg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    no-loop
+    // no-loop
 
 	when
 	    $s : Statistic()
 		$r : Record( acktype in (0, 2, 4) )
 	then
-		modify($s) {
-		    setFbgCount( $s.getFbgCount() + 1 );
-		}
+// 		modify($s) {
+		    $s.setFbgCount( $s.getFbgCount() + 1 );
+// 		}
 end
 
 //fbg normal count
@@ -20,29 +20,29 @@ rule "fbg normal count"
     extends "fbg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    no-loop
+    // no-loop
     
     when
         Record( level == 2 )
     then
-		modify($s) {
-		    setFbgNormalCount( $s.getFbgNormalCount() + 1 );
-		}
+// 		modify($s) {
+		    $s.setFbgNormalCount( $s.getFbgNormalCount() + 1 );
+// 		}
 end
 
 //2 hpg count
 rule "2 hpg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    no-loop
+    // no-loop
     
 	when
 	    $s : Statistic()
 		$r : Record( acktype in (1, 3, 5) )
 	then
-		modify($s) {
-		    setTwoHpgCount( $s.getTwoHpgCount() + 1 );
-		}
+// 		modify($s) {
+		    $s.setTwoHpgCount( $s.getTwoHpgCount() + 1 );
+// 		}
 end
 
 //2 hpg normal count
@@ -50,12 +50,12 @@ rule "2 hpg normal count"
     extends "2 hpg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    no-loop
+    // no-loop
     
     when
         Record( level == 2 )
     then
-		modify($s) {
-		    setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + 1 );
-		}
+// 		modify($s) {
+		    $s.setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + 1 );
+// 		}
 end
