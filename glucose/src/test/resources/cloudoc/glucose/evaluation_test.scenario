@@ -24,17 +24,17 @@
       <name>evaluation</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>13</executionTimeResult>
-      <numberOfRulesFired>1</numberOfRulesFired>
+      <executionTimeResult>23</executionTimeResult>
+      <numberOfRulesFired>0</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>level</fieldName>
           <expected>2</expected>
-          <actualResult>0</actualResult>
-          <successResult>true</successResult>
-          <explanation>[$r] field [level] was [2].</explanation>
+          <actualResult></actualResult>
+          <successResult>false</successResult>
+          <explanation>[$r] field [level] was [] expected [2].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -43,7 +43,7 @@
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-20 11:39:34.791 UTC</lastRunResult>
+  <lastRunResult>2016-06-20 12:03:13.332 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
