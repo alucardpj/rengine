@@ -5,63 +5,53 @@ lock-on-active true
 //fbg count
 rule "fbg count"
     ruleflow-group "statistic"
-    // dialect "mvel"
-    // no-loop
 
 	when
 	    $s : Statistic()
-		$r : Record( acktype in (0, 2, 4) )
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
 	then
-// 		modify($s) {
-		    $s.setFbgCount( $s.getFbgCount() + 1 );
-		    update($s);
-// 		}
+	    $s.setFbgCount( $s.getFbgCount() + $count );
+	    update($s);
 end
 
 //fbg normal count
 rule "fbg normal count"
-    extends "fbg count"
+    // extends "fbg count"
     ruleflow-group "statistic"
-    // dialect "mvel"
-    // no-loop
-    
+
     when
-        Record( level == 2 )
+        $s : Statistic()
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
     then
-// 		modify($s) {
-		    $s.setFbgNormalCount( $s.getFbgNormalCount() + 1 );
-		    update($s);
-// 		}
+	    $s.setFbgNormalCount( $s.getFbgNormalCount() + $count );
+	    update($s);
 end
 
 //2 hpg count
 rule "2 hpg count"
     ruleflow-group "statistic"
-    // dialect "mvel"
-    // no-loop
-    
+
 	when
 	    $s : Statistic()
-		$r : Record( acktype in (1, 3, 5) )
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
 	then
-// 		modify($s) {
-		    $s.setTwoHpgCount( $s.getTwoHpgCount() + 1 );
-		    update($s);
-// 		}
+	    $s.setTwoHpgCount( $s.getTwoHpgCount() + $count );
+	    update($s);
 end
 
 //2 hpg normal count
 rule "2 hpg normal count"
-    extends "2 hpg count"
+    // extends "2 hpg count"
     ruleflow-group "statistic"
-    // dialect "mvel"
-    // no-loop
-    
+
     when
-        Record( level == 2 )
+        $s : Statistic()
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
     then
-// 		modify($s) {
-		    $s.setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + 1 );
-		    update($s);
-// 		}
+	    $s.setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + $count );
+	    update($s);
 end
