@@ -8,7 +8,7 @@
       <fieldData>
         <field-data>
           <name>value</name>
-          <value>5.0</value>
+          <value>3.0</value>
           <nature>4</nature>
         </field-data>
         <field-data>
@@ -43,12 +43,14 @@
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-20 06:47:56.427 UTC</lastRunResult>
+  <lastRunResult>2016-06-20 09:05:22.250 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
   <imports>
     <imports/>
   </imports>
-  <ksessions/>
+  <ksessions>
+    <string>ksessiong</string>
+  </ksessions>
 </scenario>
