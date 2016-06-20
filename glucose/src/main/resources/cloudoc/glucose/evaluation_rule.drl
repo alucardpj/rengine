@@ -6,62 +6,62 @@ no-loop
 rule "value <= 3.9"
     ruleflow-group "evaluation"
     // lock-on-active true
-    dialect "mvel"
+    // dialect "mvel"
 	when
 		$r : Record( value <= 3.9 )
 	then
-		$r.level = 0;
+		$r.setLevel(0);
 // 		}
 end
 
 //3.9~4.4
 rule "3.9 < value <= 4.4"
     ruleflow-group "evaluation"
-    dialect "mvel"
+    // dialect "mvel"
     // lock-on-active true
 	when
 		$r : Record( value <= 4.4 , value > 3.9 )
 	then
 // 		modify($r) {
-		    $r.level = 1;
+		    $r.setLevel(1);
 // 		}
 end
 
 //4.4~7
 rule "4.4 < value <= 7.0"
     ruleflow-group "evaluation"
-    dialect "mvel"
+    // dialect "mvel"
     // lock-on-active true
 	when
 		$r : Record( value <= 7.0 , value > 4.4 )
 	then
 // 		modify($r) {
-		    $r.level = 2;
+		    $r.setLevel(2);
 // 		}
 end
 
 //7~16.7
 rule "7.0 < value <= 16.7"
     ruleflow-group "evaluation"
-    dialect "mvel"
+    // dialect "mvel"
     // lock-on-active true
 	when
 		$r : Record( value <= 16.7 , value > 7.0 )
 	then
 // 		modify($r) {
-		    $r.level = 3;
+		    $r.setLevel(3);
 // 		}
 end
 
 //>16.7
 rule "value > 16.7"
     ruleflow-group "evaluation"
-    dialect "mvel"
+    // dialect "mvel"
     // lock-on-active true
 	when
 		$r : Record( value > 16.7 )
 	then
 // 		modify($r) {
-		    $r.level = 4;
+		    $r.setLevel(4);
 // 		}
 end
