@@ -3,7 +3,7 @@ package cloudoc.glucose;
 //fbg count
 rule "fbg count"
     ruleflow-group "statistic"
-    lock-on-active true
+    no-loop
 
 	when
 	    $s : Statistic()
@@ -18,7 +18,7 @@ end
 //fbg normal count
 rule "fbg normal count"
     ruleflow-group "statistic"
-    lock-on-active true
+    no-loop
 
     when
         $s : Statistic()
@@ -33,7 +33,7 @@ end
 //2 hpg count
 rule "2 hpg count"
     ruleflow-group "statistic"
-    lock-on-active true
+    no-loop
 
 	when
 	    $s : Statistic()
@@ -48,7 +48,7 @@ end
 //2 hpg normal count
 rule "2 hpg normal count"
     ruleflow-group "statistic"
-    lock-on-active true
+    no-loop
 
     when
         $s : Statistic()
