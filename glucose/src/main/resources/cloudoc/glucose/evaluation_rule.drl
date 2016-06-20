@@ -5,7 +5,7 @@ package cloudoc.glucose;
 //小于3.9
 rule "value <= 3.9"
     ruleflow-group "evaluation"
-    // lock-on-active true
+    lock-on-active true
     dialect "mvel"
 	when
 		$r : Record( value <= 3.9 )
@@ -20,7 +20,7 @@ end
 rule "3.9 < value <= 4.4"
     ruleflow-group "evaluation"
     dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
 	when
 		$r : Record( value <= 4.4 , value > 3.9 )
 	then
@@ -34,7 +34,7 @@ end
 rule "4.4 < value <= 7.0"
     ruleflow-group "evaluation"
     dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
 	when
 		$r : Record( value <= 7.0 , value > 4.4 )
 	then
@@ -48,7 +48,7 @@ end
 rule "7.0 < value <= 16.7"
     ruleflow-group "evaluation"
     dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
 	when
 		$r : Record( value <= 16.7 , value > 7.0 )
 	then
@@ -62,7 +62,7 @@ end
 rule "value > 16.7"
     ruleflow-group "evaluation"
     dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
 	when
 		$r : Record( value > 16.7 )
 	then
