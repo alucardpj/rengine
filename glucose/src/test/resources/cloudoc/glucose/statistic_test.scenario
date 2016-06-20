@@ -25,45 +25,44 @@
       <name>$r</name>
       <isModify>false</isModify>
     </fact-data>
-    <fact-data>
-      <type>Statistic</type>
-      <fieldData/>
-      <name>$s</name>
-      <isModify>false</isModify>
-    </fact-data>
     <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
-      <name>statistic</name>
+      <name>statistic_new</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>13</executionTimeResult>
+      <executionTimeResult>19</executionTimeResult>
       <numberOfRulesFired>2</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
-          <fieldName>fbgNormalCount</fieldName>
-          <expected>1</expected>
-          <actualResult>0</actualResult>
-          <successResult>true</successResult>
-          <explanation>[$s] field [fbgNormalCount] was [1].</explanation>
-          <operator>==</operator>
-          <nature>1</nature>
-        </expect-field>
-        <expect-field>
           <fieldName>fbgCount</fieldName>
           <expected>1</expected>
           <actualResult>0</actualResult>
           <successResult>true</successResult>
-          <explanation>[$s] field [fbgCount] was [1].</explanation>
+          <explanation>[Statistic] field [fbgCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
       </fieldValues>
-      <name>$s</name>
-      <anonymous>false</anonymous>
+      <name>Statistic</name>
+      <anonymous>true</anonymous>
+    </expect-fact>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>fbgNormalCount</fieldName>
+          <expected>1</expected>
+          <successResult>true</successResult>
+          <explanation>[Statistic] field [fbgNormalCount] was [1].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>Statistic</name>
+      <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-20 09:08:24.89 UTC</lastRunResult>
+  <lastRunResult>2016-06-20 10:52:02.95 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
