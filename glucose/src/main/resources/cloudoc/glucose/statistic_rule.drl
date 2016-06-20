@@ -49,5 +49,5 @@ rule "2 hpg normal count"
     when
         Record( level == 2 )
     then
-		$s.getTwoHpgNormalCount( $s.getTwoHpgNormalCount() + 1 )
+		$s.setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + 1 )
 end
