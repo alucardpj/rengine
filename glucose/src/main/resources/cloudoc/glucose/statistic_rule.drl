@@ -13,7 +13,6 @@ rule "fbg count"
 		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
 	then
 	    $s.setFbgCount( $s.getFbgCount() + $count );
-	   // update($s);
 end
 
 //fbg normal count
@@ -27,7 +26,6 @@ rule "fbg normal count"
 		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
     then
 	    $s.setFbgNormalCount( $s.getFbgNormalCount() + $count );
-	   // update($s);
 end
 
 //2 hpg count
@@ -40,7 +38,6 @@ rule "2 hpg count"
 		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
 	then
 	    $s.setTwoHpgCount( $s.getTwoHpgCount() + $count );
-	   // update($s);
 end
 
 //2 hpg normal count
@@ -54,5 +51,4 @@ rule "2 hpg normal count"
 		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
     then
 	    $s.setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + $count );
-	   // update($s);
 end
