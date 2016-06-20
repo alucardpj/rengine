@@ -9,7 +9,7 @@ rule "fbg count new"
 	when
 		$r : Record( acktype in (0, 2, 4) )
 	then
-        s = new Statistic();
+        Statistic s = new Statistic();
 		s.setFbgCount( 1 );
 		insertLogical(s);
 end
@@ -22,7 +22,7 @@ rule "fbg normal count new"
     when
         Record( level == 2 )
     then
-        s = new Statistic();
+        Statistic s = new Statistic();
 		s.setFbgNormalCount( 1 );
 		insertLogical(s);
 end
@@ -34,7 +34,7 @@ rule "2 hpg count new"
 	when
 		$r : Record( acktype in (1, 3, 5) )
 	then
-        s = new Statistic();
+        Statistic s = new Statistic();
 		s.setTwoHpgCount( 1 );
 		insertLogical(s);
 end
@@ -47,7 +47,7 @@ rule "2 hpg normal count new"
     when
         Record( level == 2 )
     then
-        s = new Statistic();
+        Statistic s = new Statistic();
 		s.setTwoHpgNormalCount( 1 );
 		insertLogical(s);
 end
