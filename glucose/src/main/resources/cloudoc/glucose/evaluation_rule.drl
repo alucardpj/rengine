@@ -1,6 +1,7 @@
 package cloudoc.glucose;
 
-no-loop
+// no-loop
+lock-on-active true
 
 //小于3.9
 rule "value <= 3.9"
