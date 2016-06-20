@@ -4,12 +4,12 @@ package cloudoc.glucose;
 rule "value <= 3.9"
     ruleflow-group "evaluation"
     lock-on-active
-    dialect "mvel"
+    // dialect "mvel"
 	when
 		$r : Record( value <= 3.9 )
 	then
 		modify($r) {
-		    level = 0
+		    setLevel( 0 );
 		}
 end
 
@@ -22,7 +22,7 @@ rule "3.9 < value <= 4.4"
 		$r : Record( value <= 4.4 , value > 3.9 )
 	then
 		modify($r) {
-		    level = 1
+		    setLevel( 1 );
 		}
 end
 
@@ -35,7 +35,7 @@ rule "4.4 < value <= 7.0"
 		$r : Record( value <= 7.0 , value > 4.4 )
 	then
 		modify($r) {
-		    level = 2
+		    setLevel( 2 );
 		}
 end
 
@@ -48,7 +48,7 @@ rule "7.0 < value <= 16.7"
 		$r : Record( value <= 16.7 , value > 7.0 )
 	then
 		modify($r) {
-		    level = 3
+		    setLevel( 3 );
 		}
 end
 
@@ -61,6 +61,6 @@ rule "value > 16.7"
 		$r : Record( value > 16.7 )
 	then
 		modify($r) {
-		    level = 4
+		    setLevel( 4 );
 		}
 end
