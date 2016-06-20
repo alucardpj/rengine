@@ -1,7 +1,7 @@
 package cloudoc.glucose;
 
-// lock-on-active true
-no-loop
+lock-on-active true
+// no-loop
 
 //fbg count
 rule "fbg count"
