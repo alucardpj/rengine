@@ -35,8 +35,8 @@
       <name>statistic</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>13</executionTimeResult>
-      <numberOfRulesFired>0</numberOfRulesFired>
+      <executionTimeResult>11</executionTimeResult>
+      <numberOfRulesFired>2</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
@@ -44,8 +44,8 @@
           <fieldName>fbgNormalCount</fieldName>
           <expected>1</expected>
           <actualResult>0</actualResult>
-          <successResult>false</successResult>
-          <explanation>[$s] field [fbgNormalCount] was [0] expected [1].</explanation>
+          <successResult>true</successResult>
+          <explanation>[$s] field [fbgNormalCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -53,8 +53,8 @@
           <fieldName>fbgCount</fieldName>
           <expected>1</expected>
           <actualResult>0</actualResult>
-          <successResult>false</successResult>
-          <explanation>[$s] field [fbgCount] was [0] expected [1].</explanation>
+          <successResult>true</successResult>
+          <explanation>[$s] field [fbgCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -63,7 +63,7 @@
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-20 04:10:05.589 UTC</lastRunResult>
+  <lastRunResult>2016-06-20 09:03:48.743 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
@@ -71,6 +71,6 @@
     <imports/>
   </imports>
   <ksessions>
-    <string>defaultKieSession</string>
+    <string>ksessiong</string>
   </ksessions>
 </scenario>
