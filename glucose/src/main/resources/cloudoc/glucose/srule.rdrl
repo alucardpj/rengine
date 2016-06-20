@@ -1,9 +1,0 @@
-package cloudoc.glucose;
-
-import java.lang.Number;
-
-rule "srule"
-	dialect "mvel"
-	when
-	then
-end
