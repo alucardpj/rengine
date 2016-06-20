@@ -1,5 +1,7 @@
 package cloudoc.glucose;
 
+no-loop
+
 //fbg count
 rule "fbg count"
     ruleflow-group "statistic"
