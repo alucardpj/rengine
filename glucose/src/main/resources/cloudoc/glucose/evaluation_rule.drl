@@ -32,7 +32,7 @@ end
 rule "4.4 < value <= 7.0"
     ruleflow-group "evaluation"
     // dialect "mvel"
-    lock-on-active true
+    // lock-on-active true
 	when
 		$r : Record( value <= 7.0 , value > 4.4 )
 	then
@@ -45,7 +45,7 @@ end
 rule "7.0 < value <= 16.7"
     ruleflow-group "evaluation"
     // dialect "mvel"
-    lock-on-active true
+    // lock-on-active true
 	when
 		$r : Record( value <= 16.7 , value > 7.0 )
 	then
@@ -58,7 +58,7 @@ end
 rule "value > 16.7"
     ruleflow-group "evaluation"
     // dialect "mvel"
-    lock-on-active true
+    // lock-on-active true
 	when
 		$r : Record( value > 16.7 )
 	then
