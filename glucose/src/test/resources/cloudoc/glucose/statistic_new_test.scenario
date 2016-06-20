@@ -1,5 +1,5 @@
 <scenario>
-  <name>statistic_test.scenario</name>
+  <name>statistic_new_test.scenario</name>
   <maxRuleFirings>100000</maxRuleFirings>
   <globals/>
   <fixtures>
