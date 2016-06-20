@@ -4,13 +4,15 @@ package cloudoc.glucose;
 rule "fbg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
 
 	when
 	    $s : Statistic()
 		$r : Record( acktype in (0, 2, 4) )
 	then
-		$s.setFbgCount( $s.getFbgCount() + 1 );
+		modify($s) {
+		    setFbgCount( $s.getFbgCount() + 1 );
+		}
 end
 
 //fbg normal count
@@ -18,25 +20,29 @@ rule "fbg normal count"
     extends "fbg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
     
     when
         Record( level == 2 )
     then
-		$s.setFbgNormalCount( $s.getFbgNormalCount() + 1 );
+		modify($s) {
+		    setFbgNormalCount( $s.getFbgNormalCount() + 1 );
+		}
 end
 
 //2 hpg count
 rule "2 hpg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
     
 	when
 	    $s : Statistic()
 		$r : Record( acktype in (1, 3, 5) )
 	then
-		$s.setTwoHpgCount( $s.getTwoHpgCount() + 1 );
+		modify($s) {
+		    setTwoHpgCount( $s.getTwoHpgCount() + 1 );
+		}
 end
 
 //2 hpg normal count
@@ -44,10 +50,12 @@ rule "2 hpg normal count"
     extends "2 hpg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    // lock-on-active true
+    lock-on-active true
     
     when
         Record( level == 2 )
     then
-		$s.setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + 1 );
+		modify($s) {
+		    setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + 1 );
+		}
 end
