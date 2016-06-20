@@ -35,20 +35,24 @@
       <name>statistic</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>11</executionTimeResult>
-      <numberOfRulesFired>0</numberOfRulesFired>
+      <executionTimeResult>69</executionTimeResult>
+      <numberOfRulesFired>4</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>fbgCount</fieldName>
           <expected>1</expected>
+          <successResult>true</successResult>
+          <explanation>[$s] field [fbgCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>fbgNormalCount</fieldName>
           <expected>1</expected>
+          <successResult>true</successResult>
+          <explanation>[$s] field [fbgNormalCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -57,7 +61,7 @@
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-20 11:17:58.10 UTC</lastRunResult>
+  <lastRunResult>2016-06-20 13:21:13.757 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
