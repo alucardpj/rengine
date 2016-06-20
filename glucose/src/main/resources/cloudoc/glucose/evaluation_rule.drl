@@ -10,7 +10,6 @@ rule "value <= 3.9"
 	then
 		modify($r) {
 		    level = 0
-		  //  update($r);
 		}
 end
 
@@ -24,7 +23,6 @@ rule "3.9 < value <= 4.4"
 	then
 		modify($r) {
 		    level = 1
-		  //  update($r);
 		}
 end
 
@@ -38,7 +36,6 @@ rule "4.4 < value <= 7.0"
 	then
 		modify($r) {
 		    level = 2
-		  //  update($r);
 		}
 end
 
@@ -52,7 +49,6 @@ rule "7.0 < value <= 16.7"
 	then
 		modify($r) {
 		    level = 3
-		  //  update($r);
 		}
 end
 
@@ -66,6 +62,5 @@ rule "value > 16.7"
 	then
 		modify($r) {
 		    level = 4
-		  //  update($r);
 		}
 end
