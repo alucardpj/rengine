@@ -6,12 +6,13 @@ rule "fbg count"
     no-loop
 
 	when
-	    $s : Statistic()
+	    $s : Statistic( fbgCountUpdated == false )
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
 	then
 	    modify($s) {
 	        setFbgCount( $s.getFbgCount() + $count );
+	        setFbgCountUpdated(true);
 	    }
 end
 
@@ -21,12 +22,13 @@ rule "fbg normal count"
     no-loop
 
     when
-        $s : Statistic()
+        $s : Statistic( fbgNormalCountUpdated == false )
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
     then
 	    modify($s) {
 	        setFbgNormalCount( $s.getFbgNormalCount() + $count );
+	        setFbgNormalCountUpdated(true);
 	    }
 end
 
@@ -36,12 +38,13 @@ rule "2 hpg count"
     no-loop
 
 	when
-	    $s : Statistic()
+	    $s : Statistic( twoHpgCountupdated == false )
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
 	then
 	    modify($s) {
 	        setTwoHpgCount( $s.getTwoHpgCount() + $count );
+	        setTwoHpgCountUpdated(true);
 	    }
 end
 
@@ -51,11 +54,12 @@ rule "2 hpg normal count"
     no-loop
 
     when
-        $s : Statistic()
+        $s : Statistic( twoHpgNormalCountUpdated == false )
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
     then
 	    modify($s) {
 	        setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + $count );
+	        setTwoHpgNormalCountUpdated(true);
 	    }
 end
