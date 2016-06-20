@@ -4,7 +4,7 @@ package cloudoc.glucose;
 rule "fbg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    lock-on-active true
+    no-loop
 
 	when
 	    $s : Statistic()
@@ -20,7 +20,7 @@ rule "fbg normal count"
     extends "fbg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    lock-on-active true
+    no-loop
     
     when
         Record( level == 2 )
@@ -34,7 +34,7 @@ end
 rule "2 hpg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    lock-on-active true
+    no-loop
     
 	when
 	    $s : Statistic()
@@ -50,7 +50,7 @@ rule "2 hpg normal count"
     extends "2 hpg count"
     ruleflow-group "statistic"
     // dialect "mvel"
-    lock-on-active true
+    no-loop
     
     when
         Record( level == 2 )
