@@ -25,8 +25,14 @@
       <name>$r</name>
       <isModify>false</isModify>
     </fact-data>
+    <fact-data>
+      <type>Statistic</type>
+      <fieldData/>
+      <name>$s</name>
+      <isModify>false</isModify>
+    </fact-data>
     <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
-      <name>statistic_new</name>
+      <name>statistic</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
       <executionTimeResult>19</executionTimeResult>
@@ -37,29 +43,18 @@
         <expect-field>
           <fieldName>fbgCount</fieldName>
           <expected>1</expected>
-          <actualResult>0</actualResult>
-          <successResult>true</successResult>
-          <explanation>[Statistic] field [fbgCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
-      </fieldValues>
-      <name>Statistic</name>
-      <anonymous>true</anonymous>
-    </expect-fact>
-    <expect-fact>
-      <fieldValues>
         <expect-field>
           <fieldName>fbgNormalCount</fieldName>
           <expected>1</expected>
-          <successResult>true</successResult>
-          <explanation>[Statistic] field [fbgNormalCount] was [1].</explanation>
           <operator>==</operator>
-          <nature>1</nature>
+          <nature>0</nature>
         </expect-field>
       </fieldValues>
-      <name>Statistic</name>
-      <anonymous>true</anonymous>
+      <name>$s</name>
+      <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
   <lastRunResult>2016-06-20 10:52:02.95 UTC</lastRunResult>
