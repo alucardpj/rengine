@@ -10,8 +10,9 @@ rule "value <= 3.9"
 	when
 		$r : Record( value <= 3.9 )
 	then
-		$r.setLevel(0);
-// 		}
+		modify($r) {
+		    setLevel(0);
+		}
 end
 
 //3.9~4.4
@@ -22,9 +23,9 @@ rule "3.9 < value <= 4.4"
 	when
 		$r : Record( value <= 4.4 , value > 3.9 )
 	then
-// 		modify($r) {
-		    $r.setLevel(1);
-// 		}
+		modify($r) {
+		    setLevel(1);
+		}
 end
 
 //4.4~7
@@ -35,9 +36,9 @@ rule "4.4 < value <= 7.0"
 	when
 		$r : Record( value <= 7.0 , value > 4.4 )
 	then
-// 		modify($r) {
-		    $r.setLevel(2);
-// 		}
+		modify($r) {
+		    setLevel(2);
+		}
 end
 
 //7~16.7
@@ -48,9 +49,9 @@ rule "7.0 < value <= 16.7"
 	when
 		$r : Record( value <= 16.7 , value > 7.0 )
 	then
-// 		modify($r) {
-		    $r.setLevel(3);
-// 		}
+		modify($r) {
+		    setLevel(3);
+		}
 end
 
 //>16.7
@@ -61,7 +62,7 @@ rule "value > 16.7"
 	when
 		$r : Record( value > 16.7 )
 	then
-// 		modify($r) {
-		    $r.setLevel(4);
-// 		}
+		modify($r) {
+		    setLevel(4);
+		}
 end
