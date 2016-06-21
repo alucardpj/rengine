@@ -65,6 +65,8 @@ public class Statistic implements java.io.Serializable
 
    private java.lang.Boolean averageFBGUpdated = false;
 
+   private java.lang.Boolean fbgVarianceUpdated;
+
    public Statistic()
    {
    }
@@ -282,6 +284,16 @@ public class Statistic implements java.io.Serializable
       this.averageFBGUpdated = averageFBGUpdated;
    }
 
+   public java.lang.Boolean getFbgVarianceUpdated()
+   {
+      return this.fbgVarianceUpdated;
+   }
+
+   public void setFbgVarianceUpdated(java.lang.Boolean fbgVarianceUpdated)
+   {
+      this.fbgVarianceUpdated = fbgVarianceUpdated;
+   }
+
    public Statistic(java.lang.Integer fbgCount, java.lang.Integer fbgNormalCount,
          java.lang.Double fbgNormalPercentage, java.lang.Integer twoHpgCount,
          java.lang.Double twoHpgNormalPercentage,
@@ -297,7 +309,8 @@ public class Statistic implements java.io.Serializable
          java.lang.Boolean twoHpgNormalCountUpdated,
          java.lang.Boolean hypoglycemiaCountUpdated,
          java.lang.Boolean hyperglycemiaCountUpdated,
-         java.lang.Boolean averageFBGUpdated)
+         java.lang.Boolean averageFBGUpdated,
+         java.lang.Boolean fbgVarianceUpdated)
    {
       this.fbgCount = fbgCount;
       this.fbgNormalCount = fbgNormalCount;
@@ -320,6 +333,7 @@ public class Statistic implements java.io.Serializable
       this.hypoglycemiaCountUpdated = hypoglycemiaCountUpdated;
       this.hyperglycemiaCountUpdated = hyperglycemiaCountUpdated;
       this.averageFBGUpdated = averageFBGUpdated;
+      this.fbgVarianceUpdated = fbgVarianceUpdated;
    }
 
 }
