@@ -12,7 +12,7 @@ rule "only diabetes"
     then
         Conclusion c = new Conclusion();
         c.setTitle("weekly report");
-        insertLogical(c);
+        insert(c);
 end
 
 //record count <= 2
@@ -25,10 +25,10 @@ rule "record count <= 2"
     then
         Conclusion c = new Conclusion();
         c.setTitle("\u8840\u7cd6\u76d1\u6d4b\u60c5\u51b5");
-        insertLogical(c);
+        insert(c);
         Conclusion c2 = new Conclusion();
         c.setTitle("\u8bc4\u4f30\u548c\u76ee\u6807");
-        insertLogical(c2);
+        insert(c2);
 end
 
 rule "record count <= 2, and hypoglycemiaCount > 0"
@@ -40,7 +40,7 @@ rule "record count <= 2, and hypoglycemiaCount > 0"
     then
         Conclusion c = new Conclusion();
         c.setTitle("hypoglycemiaCount > 0");
-        insertLogical(c);
+        insert(c);
 end
 
 rule "record count <= 2, and hypoglycemiaCount == 0"
@@ -52,5 +52,5 @@ rule "record count <= 2, and hypoglycemiaCount == 0"
     then
         Conclusion c = new Conclusion();
         c.setTitle("hypoglycemiaCount == 0");
-        insertLogical(c);
+        insert(c);
 end
