@@ -3,7 +3,6 @@ package cloudoc.glucose;
 //only diabetes
 rule "only diabetes"
     ruleflow-group "determination"
-    activation-group "diabetes"
     salience -10
 
     when
@@ -18,7 +17,6 @@ end
 //fbgCount + twoHpgCount <= 2
 rule "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
-    activation-group "diabetes"
     // salience 40
     
     when
@@ -36,7 +34,6 @@ end
 rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
-    activation-group "diabetes"
     salience 40
 
     when
@@ -50,7 +47,6 @@ end
 rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
-    activation-group "diabetes"
     salience 40
 
     when
