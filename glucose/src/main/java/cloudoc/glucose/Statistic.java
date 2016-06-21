@@ -71,7 +71,7 @@ public class Statistic implements java.io.Serializable
 
    private java.lang.Boolean twoHpgVarianceUpdated = false;
 
-   private java.util.List<cloudoc.glucose.Conclusion> conclusionArray;
+   private java.util.List<cloudoc.glucose.Conclusion> conclusionArray = new java.util.ArrayList<cloudoc.glucose.Conclusion>();
 
    public Statistic()
    {
