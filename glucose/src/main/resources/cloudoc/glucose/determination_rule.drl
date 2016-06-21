@@ -5,8 +5,7 @@ rule "only diabetes"
     ruleflow-group "determination"
     activation-group "diabetes"
     salience 50
-    no-loop
-    
+
     when
         $p : Patient( isDiabetes == true )
         not( exists( Record() ) )
