@@ -25,17 +25,17 @@
       <name>determination</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>48</executionTimeResult>
-      <numberOfRulesFired>1</numberOfRulesFired>
+      <executionTimeResult>53</executionTimeResult>
+      <numberOfRulesFired>3</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>title</fieldName>
           <expected>weekly report</expected>
-          <actualResult>weekly report</actualResult>
-          <successResult>false</successResult>
-          <explanation>[Conclusion] field [title] was [weekly report] expected [周评].</explanation>
+          <actualResult>评估和目标</actualResult>
+          <successResult>true</successResult>
+          <explanation>[Conclusion] field [title] was [weekly report].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -44,12 +44,22 @@
       <anonymous>true</anonymous>
     </expect-fact>
     <expect-fact>
-      <fieldValues/>
+      <fieldValues>
+        <expect-field>
+          <fieldName>title</fieldName>
+          <expected>weekly report</expected>
+          <actualResult>weekly report</actualResult>
+          <successResult>true</successResult>
+          <explanation>[Conclusion] field [title] was not [weekly report].</explanation>
+          <operator>!=</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
       <name>Conclusion</name>
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 08:47:19.81 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 10:53:47.967 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
