@@ -3,6 +3,8 @@ package cloudoc.glucose;
 //only diabetes
 rule "only diabetes"
     ruleflow-group "determination"
+    activation-group "diabetes"
+    salience 50
     no-loop
     
     when
@@ -18,7 +20,9 @@ end
 //record count <= 2
 rule "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
-
+    activation-group "diabetes"
+    salience 40
+    
     when
         $p : Patient( isDiabetes == true )
         $s : Statistic( fbgCount + twoHpgCount <= 2 )
@@ -34,6 +38,8 @@ end
 rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
+    activation-group "diabetes"
+    salience 40
 
     when
         Statistic( hypoglycemiaCount > 0 )
@@ -46,6 +52,8 @@ end
 rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
+    activation-group "diabetes"
+    salience 40
 
     when
         Statistic( hypoglycemiaCount == 0 )
