@@ -54,8 +54,11 @@
       <name>$r</name>
       <isModify>false</isModify>
     </fact-data>
+    <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+      <name>determination</name>
+    </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>55</executionTimeResult>
+      <executionTimeResult>57</executionTimeResult>
       <numberOfRulesFired>0</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
@@ -89,9 +92,9 @@
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 08:36:24.660 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 08:41:38.515 UTC</lastRunResult>
   <rules/>
-  <inclusive>false</inclusive>
+  <inclusive>true</inclusive>
   <packageName>cloudoc.glucose</packageName>
   <imports>
     <imports/>
