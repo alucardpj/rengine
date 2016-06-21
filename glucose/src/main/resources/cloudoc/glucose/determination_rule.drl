@@ -7,7 +7,7 @@ rule "only diabetes"
     salience 50
 
     when
-        p : Patient( isDiabetes == true )
+        Patient( isDiabetes == true )
         not( Record() )
     then
         Conclusion c = new Conclusion();
@@ -22,8 +22,8 @@ rule "fbgCount + twoHpgCount <= 2"
     salience 40
     
     when
-        p : Patient( isDiabetes == true )
-        $s : Statistic( fbgCount + twoHpgCount <= 2 )
+        Patient( isDiabetes == true )
+        Statistic( fbgCount + twoHpgCount <= 2 )
     then
         Conclusion c = new Conclusion();
         c.setTitle("\u8840\u7cd6\u76d1\u6d4b\u60c5\u51b5");
