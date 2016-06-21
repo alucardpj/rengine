@@ -61,6 +61,8 @@ public class Statistic implements java.io.Serializable
 
    private java.lang.Boolean hypoglycemiaCountUpdated = false;
 
+   private java.lang.Boolean hyperglycemiaCountUpdated = false;
+
    public Statistic()
    {
    }
@@ -257,6 +259,17 @@ public class Statistic implements java.io.Serializable
       this.hypoglycemiaCountUpdated = hypoglycemiaCountUpdated;
    }
 
+   public java.lang.Boolean getHyperglycemiaCountUpdated()
+   {
+      return this.hyperglycemiaCountUpdated;
+   }
+
+   public void setHyperglycemiaCountUpdated(
+         java.lang.Boolean hyperglycemiaCountUpdated)
+   {
+      this.hyperglycemiaCountUpdated = hyperglycemiaCountUpdated;
+   }
+
    public Statistic(java.lang.Integer fbgCount, java.lang.Integer fbgNormalCount,
          java.lang.Double fbgNormalPercentage, java.lang.Integer twoHpgCount,
          java.lang.Double twoHpgNormalPercentage,
@@ -270,7 +283,8 @@ public class Statistic implements java.io.Serializable
          java.lang.Boolean fbgNormalCountUpdated,
          java.lang.Boolean twoHpgCountUpdated,
          java.lang.Boolean twoHpgNormalCountUpdated,
-         java.lang.Boolean hypoglycemiaCountUpdated)
+         java.lang.Boolean hypoglycemiaCountUpdated,
+         java.lang.Boolean hyperglycemiaCountUpdated)
    {
       this.fbgCount = fbgCount;
       this.fbgNormalCount = fbgNormalCount;
@@ -291,6 +305,7 @@ public class Statistic implements java.io.Serializable
       this.twoHpgCountUpdated = twoHpgCountUpdated;
       this.twoHpgNormalCountUpdated = twoHpgNormalCountUpdated;
       this.hypoglycemiaCountUpdated = hypoglycemiaCountUpdated;
+      this.hyperglycemiaCountUpdated = hyperglycemiaCountUpdated;
    }
 
 }
