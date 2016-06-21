@@ -55,7 +55,7 @@ public class Statistic implements java.io.Serializable
 
    private java.lang.Boolean fbgNormalCountUpdated = false;
 
-   private java.lang.Boolean twoHpgCountUpdated = false;;
+   private java.lang.Boolean twoHpgCountUpdated = false;
 
    private java.lang.Boolean twoHpgNormalCountUpdated = false;
 
