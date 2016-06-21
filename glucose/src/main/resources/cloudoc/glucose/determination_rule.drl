@@ -1,6 +1,6 @@
 package cloudoc.glucose;
 
-only diabetes
+//only diabetes
 rule "only diabetes"
     ruleflow-group "determination"
     // activation-group "diabetes"
@@ -22,7 +22,7 @@ rule "fbgCount + twoHpgCount <= 2"
     salience 40
     
     when
-        $p : Patient( isDiabetes == true )
+        $p1 : Patient( isDiabetes == true )
         $s : Statistic( fbgCount + twoHpgCount <= 2 )
     then
         Conclusion c = new Conclusion();
