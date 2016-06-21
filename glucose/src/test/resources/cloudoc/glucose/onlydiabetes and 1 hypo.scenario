@@ -23,6 +23,16 @@
           <value>1</value>
           <nature>4</nature>
         </field-data>
+        <field-data>
+          <name>fbgCount</name>
+          <value>1</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>twoHpgCount</name>
+          <value>0</value>
+          <nature>4</nature>
+        </field-data>
       </fieldData>
       <name>$s</name>
       <isModify>false</isModify>
@@ -45,32 +55,17 @@
       <isModify>false</isModify>
     </fact-data>
     <execution-trace>
-      <executionTimeResult>57</executionTimeResult>
-      <numberOfRulesFired>3</numberOfRulesFired>
+      <executionTimeResult>55</executionTimeResult>
+      <numberOfRulesFired>0</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>title</fieldName>
-          <expected>weekly report</expected>
-          <actualResult>评估和目标</actualResult>
-          <successResult>true</successResult>
-          <explanation>[Conclusion] field [title] was [weekly report].</explanation>
-          <operator>==</operator>
-          <nature>1</nature>
-        </expect-field>
-      </fieldValues>
-      <name>Conclusion</name>
-      <anonymous>true</anonymous>
-    </expect-fact>
-    <expect-fact>
-      <fieldValues>
-        <expect-field>
-          <fieldName>title</fieldName>
           <expected>hypoglycemiaCount &gt; 0</expected>
-          <actualResult>weekly report</actualResult>
-          <successResult>true</successResult>
-          <explanation>[Conclusion] field [title] was [hypoglycemiaCount &gt; 0].</explanation>
+          <actualResult>No match</actualResult>
+          <successResult>false</successResult>
+          <explanation>Fact of type [Conclusion] was not found in the results.</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -83,9 +78,9 @@
         <expect-field>
           <fieldName>title</fieldName>
           <expected>血糖监测情况</expected>
-          <actualResult></actualResult>
+          <actualResult>No match</actualResult>
           <successResult>false</successResult>
-          <explanation>[Conclusion] field [title] was [] expected [血糖监测情况].</explanation>
+          <explanation>Fact of type [Conclusion] was not found in the results.</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -94,7 +89,7 @@
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 08:31:59.39 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 08:36:24.660 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
