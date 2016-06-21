@@ -16,7 +16,7 @@ rule "only diabetes"
 end
 
 //record count <= 2
-rule "record count <= 2"
+rule "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
 
     when
@@ -31,8 +31,8 @@ rule "record count <= 2"
         insert(c2);
 end
 
-rule "record count <= 2, and hypoglycemiaCount > 0"
-    extends "record count <= 2"
+rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
+    extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
 
     when
@@ -43,8 +43,8 @@ rule "record count <= 2, and hypoglycemiaCount > 0"
         insert(c);
 end
 
-rule "record count <= 2, and hypoglycemiaCount == 0"
-    extends "record count <= 2"
+rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
+    extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
 
     when
