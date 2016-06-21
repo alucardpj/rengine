@@ -4,7 +4,7 @@ package cloudoc.glucose;
 rule "only diabetes"
     ruleflow-group "determination"
     // activation-group "diabetes"
-    salience 30
+    salience 50
 
     when
         p : Patient( isDiabetes == true )
