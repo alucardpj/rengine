@@ -1,5 +1,5 @@
 <scenario>
-  <name>only diabetes test.scenario</name>
+  <name>onlydiabetes and 1 hypo.scenario</name>
   <maxRuleFirings>100000</maxRuleFirings>
   <globals/>
   <fixtures>
@@ -17,7 +17,13 @@
     </fact-data>
     <fact-data>
       <type>Statistic</type>
-      <fieldData/>
+      <fieldData>
+        <field-data>
+          <name>hypoglycemiaCount</name>
+          <value>1</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
       <name>$s</name>
       <isModify>false</isModify>
     </fact-data>
@@ -38,6 +44,18 @@
           <explanation>[Conclusion] field [title] was [周评].</explanation>
           <operator>==</operator>
           <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>Conclusion</name>
+      <anonymous>true</anonymous>
+    </expect-fact>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>title</fieldName>
+          <expected>hypoglycemiaCount &gt; 0</expected>
+          <operator>==</operator>
+          <nature>0</nature>
         </expect-field>
       </fieldValues>
       <name>Conclusion</name>
