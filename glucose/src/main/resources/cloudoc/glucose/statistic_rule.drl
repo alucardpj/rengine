@@ -11,7 +11,7 @@ rule "fbg count"
 		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
 	then
 	    modify($s) {
-	        setFbgCount( $s.getFbgCount() + $count ),
+	        setFbgCount( $count ),
 	        setFbgCountUpdated(true);
 	    }
 end
@@ -27,7 +27,7 @@ rule "fbg normal count"
 		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
     then
 	    modify($s) {
-	        setFbgNormalCount( $s.getFbgNormalCount() + $count ),
+	        setFbgNormalCount( $count ),
 	        setFbgNormalCountUpdated(true);
 	    }
 end
@@ -43,7 +43,7 @@ rule "2 hpg count"
 		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
 	then
 	    modify($s) {
-	        setTwoHpgCount( $s.getTwoHpgCount() + $count ),
+	        setTwoHpgCount( $count ),
 	        setTwoHpgCountUpdated(true);
 	    }
 end
@@ -59,7 +59,23 @@ rule "2 hpg normal count"
 		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
     then
 	    modify($s) {
-	        setTwoHpgNormalCount( $s.getTwoHpgNormalCount() + $count ),
+	        setTwoHpgNormalCount( $count ),
 	        setTwoHpgNormalCountUpdated(true);
 	    }
 end
+
+//hypoglycemia count
+rule "hypoglycemia count"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( hypoglycemiaCountUpated == false )
+        Number( $count : intValue )
+            from accumulate( Record( value <= 3.9 ), count() )
+    then
+        modify($s) {
+            setHypoglycemiaCount( $count ),
+            setHypoglycemiaCountUpdated(true);
+        }
+end
+
