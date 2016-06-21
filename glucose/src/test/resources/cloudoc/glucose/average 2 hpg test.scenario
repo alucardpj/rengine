@@ -79,7 +79,7 @@
       <isModify>false</isModify>
     </fact-data>
     <execution-trace>
-      <executionTimeResult>66</executionTimeResult>
+      <executionTimeResult>70</executionTimeResult>
       <numberOfRulesFired>10</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
@@ -133,12 +133,21 @@
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
+        <expect-field>
+          <fieldName>averageTwoHpg</fieldName>
+          <expected>8.666666666666666</expected>
+          <actualResult>8.666666666666666</actualResult>
+          <successResult>true</successResult>
+          <explanation>[$s] field [averageTwoHpg] was [8.666666666666666].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
       </fieldValues>
       <name>$s</name>
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 03:36:45.810 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 03:37:13.950 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
