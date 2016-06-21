@@ -58,15 +58,15 @@
       <name>determination</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>101</executionTimeResult>
-      <numberOfRulesFired>2</numberOfRulesFired>
+      <executionTimeResult>64</executionTimeResult>
+      <numberOfRulesFired>1</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>title</fieldName>
           <expected>血糖监测情况</expected>
-          <actualResult>hypoglycemiaCount &gt; 0</actualResult>
+          <actualResult>评估和目标</actualResult>
           <successResult>true</successResult>
           <explanation>[Conclusion] field [title] was [血糖监测情况].</explanation>
           <operator>==</operator>
@@ -95,9 +95,10 @@
       <fieldValues>
         <expect-field>
           <fieldName>title</fieldName>
-          <expected>hypoglycemiaCount &gt; 0</expected>
-          <successResult>true</successResult>
-          <explanation>[Conclusion] field [title] was [hypoglycemiaCount &gt; 0].</explanation>
+          <expected>低血糖&gt;0</expected>
+          <actualResult>血糖监测情况</actualResult>
+          <successResult>false</successResult>
+          <explanation>[Conclusion] field [title] was [血糖监测情况] expected [低血糖&gt;0].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -106,7 +107,7 @@
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 10:52:49.369 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 11:44:11.370 UTC</lastRunResult>
   <rules/>
   <inclusive>true</inclusive>
   <packageName>cloudoc.glucose</packageName>
