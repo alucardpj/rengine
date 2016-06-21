@@ -57,7 +57,7 @@
       <name>statistic</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>66</executionTimeResult>
+      <executionTimeResult>58</executionTimeResult>
       <numberOfRulesFired>10</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
@@ -112,12 +112,20 @@
           <operator>==</operator>
           <nature>0</nature>
         </expect-field>
+        <expect-field>
+          <fieldName>hypoglycemiaCount</fieldName>
+          <expected>1</expected>
+          <successResult>true</successResult>
+          <explanation>[$s] field [hypoglycemiaCount] was [1].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
       </fieldValues>
       <name>$s</name>
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 03:24:11.311 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 03:25:30.664 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
