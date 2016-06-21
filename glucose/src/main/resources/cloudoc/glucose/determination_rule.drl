@@ -56,3 +56,16 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
         c.setTitle("hypoglycemiaCount == 0");
         insert(c);
 end
+
+rule "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0"
+    extends "fbgCount + twoHpgCount <= 2"
+    ruleflow-group "determination"
+    salience 40
+
+    when
+        Statistic( hyperglycemiaCount > 0 )
+    then
+        Conclusion c = new Conclusion();
+        c.setTitle("hyperglycemiaCount > 0");
+        insert(c);
+end
