@@ -79,3 +79,18 @@ rule "hypoglycemia count"
         }
 end
 
+//hyperglycemia count
+rule "hyperglycemia count"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( hyperglycemiaCountUpdated == false )
+        Number( $count : intValue )
+            from accumulate( Record( value > 16.7 ), count() )
+    then
+        modify($s) {
+            setHyperglycemiaCount( $count ),
+            setHyperglycemiaCountUpdated(true);
+        }
+end
+
