@@ -31,15 +31,15 @@
       <name>determination</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>44</executionTimeResult>
-      <numberOfRulesFired>1</numberOfRulesFired>
+      <executionTimeResult>98</executionTimeResult>
+      <numberOfRulesFired>3</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
       <fieldValues>
         <expect-field>
           <fieldName>title</fieldName>
           <expected>周评</expected>
-          <actualResult>������</actualResult>
+          <actualResult></actualResult>
           <successResult>true</successResult>
           <explanation>[Conclusion] field [title] was [周评].</explanation>
           <operator>==</operator>
@@ -54,15 +54,18 @@
         <expect-field>
           <fieldName>title</fieldName>
           <expected>hypoglycemiaCount &gt; 0</expected>
+          <actualResult>周评</actualResult>
+          <successResult>true</successResult>
+          <explanation>[Conclusion] field [title] was [hypoglycemiaCount == 0].</explanation>
           <operator>==</operator>
-          <nature>0</nature>
+          <nature>1</nature>
         </expect-field>
       </fieldValues>
       <name>Conclusion</name>
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 08:06:14.130 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 08:25:38.677 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
