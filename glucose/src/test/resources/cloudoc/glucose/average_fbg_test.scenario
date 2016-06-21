@@ -103,12 +103,21 @@
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
+        <expect-field>
+          <fieldName>hyperglycemiaCount</fieldName>
+          <expected></expected>
+          <actualResult>0</actualResult>
+          <successResult>false</successResult>
+          <explanation>[$s] field [hyperglycemiaCount] was [0] expected [].</explanation>
+          <operator>==</operator>
+          <nature>0</nature>
+        </expect-field>
       </fieldValues>
       <name>$s</name>
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 03:23:30.391 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 03:24:11.311 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
