@@ -58,7 +58,7 @@
       <name>determination</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>64</executionTimeResult>
+      <executionTimeResult>54</executionTimeResult>
       <numberOfRulesFired>1</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
@@ -107,9 +107,14 @@
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 11:44:11.370 UTC</lastRunResult>
-  <rules/>
-  <inclusive>true</inclusive>
+  <lastRunResult>2016-06-21 11:56:23.77 UTC</lastRunResult>
+  <rules>
+    <string>Row 1 determination_rule</string>
+    <string>Row 2 determination_rule</string>
+    <string>Row 3 determination_rule</string>
+    <string>Row 4 determination_rule</string>
+  </rules>
+  <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
   <imports>
     <imports/>
