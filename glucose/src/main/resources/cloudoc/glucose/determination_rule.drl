@@ -1,21 +1,21 @@
 package cloudoc.glucose;
 
 //only diabetes
-rule "only diabetes"
-    ruleflow-group "determination"
-    activation-group "diabetes"
-    salience 50
-    no-loop
+// rule "only diabetes"
+//     ruleflow-group "determination"
+//     activation-group "diabetes"
+//     salience 50
+//     no-loop
     
-    when
-        $p : Patient( isDiabetes == true )
-        $s : Statistic()
-        not( exists( Record() ) )
-    then
-        Conclusion c = new Conclusion();
-        c.setTitle("weekly report");
-        insert(c);
-end
+//     when
+//         $p : Patient( isDiabetes == true )
+//         $s : Statistic()
+//         not( exists( Record() ) )
+//     then
+//         Conclusion c = new Conclusion();
+//         c.setTitle("weekly report");
+//         insert(c);
+// end
 
 //fbgCount + twoHpgCount <= 2
 rule "fbgCount + twoHpgCount <= 2"
