@@ -18,8 +18,7 @@ end
 //record count <= 2
 rule "record count <= 2"
     ruleflow-group "determination"
-    no-loop
-    
+
     when
         $p : Patient( isDiabetes == true )
         $s : Statistic( fbgCount + twoHpgCount <= 2 )
@@ -35,8 +34,7 @@ end
 rule "record count <= 2, and hypoglycemiaCount > 0"
     extends "record count <= 2"
     ruleflow-group "determination"
-    no-loop
-    
+
     when
         Statistic( hypoglycemiaCount > 0 )
     then
@@ -48,8 +46,7 @@ end
 rule "record count <= 2, and hypoglycemiaCount == 0"
     extends "record count <= 2"
     ruleflow-group "determination"
-    no-loop
-    
+
     when
         Statistic( hypoglycemiaCount == 0 )
     then
