@@ -57,7 +57,7 @@
       <name>statistic</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>130</executionTimeResult>
+      <executionTimeResult>66</executionTimeResult>
       <numberOfRulesFired>10</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
@@ -66,8 +66,8 @@
           <fieldName>fbgCount</fieldName>
           <expected>2</expected>
           <actualResult>2</actualResult>
-          <successResult>false</successResult>
-          <explanation>[$s] field [fbgCount] was [2] expected [1].</explanation>
+          <successResult>true</successResult>
+          <explanation>[$s] field [fbgCount] was [2].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -87,12 +87,28 @@
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
+        <expect-field>
+          <fieldName>fbgVariance</fieldName>
+          <expected>1.0</expected>
+          <successResult>true</successResult>
+          <explanation>[$s] field [fbgVariance] was [1.0].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+        <expect-field>
+          <fieldName>fbgStandardDeviation</fieldName>
+          <expected>1.0</expected>
+          <successResult>true</successResult>
+          <explanation>[$s] field [fbgStandardDeviation] was [1.0].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
       </fieldValues>
       <name>$s</name>
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-21 03:21:52.802 UTC</lastRunResult>
+  <lastRunResult>2016-06-21 03:23:30.391 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
