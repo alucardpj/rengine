@@ -35,30 +35,30 @@ rule "fbgCount + twoHpgCount <= 2"
         insert(c2);
 end
 
-rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
-    extends "fbgCount + twoHpgCount <= 2"
-    ruleflow-group "determination"
-    activation-group "diabetes"
-    salience 40
+// rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
+//     extends "fbgCount + twoHpgCount <= 2"
+//     ruleflow-group "determination"
+//     activation-group "diabetes"
+//     salience 40
 
-    when
-        Statistic( hypoglycemiaCount > 0 )
-    then
-        Conclusion c = new Conclusion();
-        c.setTitle("hypoglycemiaCount > 0");
-        insert(c);
-end
+//     when
+//         Statistic( hypoglycemiaCount > 0 )
+//     then
+//         Conclusion c = new Conclusion();
+//         c.setTitle("hypoglycemiaCount > 0");
+//         insert(c);
+// end
 
-rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
-    extends "fbgCount + twoHpgCount <= 2"
-    ruleflow-group "determination"
-    activation-group "diabetes"
-    salience 40
+// rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
+//     extends "fbgCount + twoHpgCount <= 2"
+//     ruleflow-group "determination"
+//     activation-group "diabetes"
+//     salience 40
 
-    when
-        Statistic( hypoglycemiaCount == 0 )
-    then
-        Conclusion c = new Conclusion();
-        c.setTitle("hypoglycemiaCount == 0");
-        insert(c);
-end
+//     when
+//         Statistic( hypoglycemiaCount == 0 )
+//     then
+//         Conclusion c = new Conclusion();
+//         c.setTitle("hypoglycemiaCount == 0");
+//         insert(c);
+// end
