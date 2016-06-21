@@ -65,7 +65,7 @@ public class Statistic implements java.io.Serializable
 
    private java.lang.Boolean averageFBGUpdated = false;
 
-   private java.lang.Boolean fbgVarianceUpdated;
+   private java.lang.Boolean fbgVarianceUpdated = false;
 
    public Statistic()
    {
