@@ -69,7 +69,7 @@ rule "hypoglycemia count"
     ruleflow-group "statistic"
     
     when
-        $s : Statistic( hypoglycemiaCountUpated == false )
+        $s : Statistic( hypoglycemiaCountUpdated == false )
         Number( $count : intValue )
             from accumulate( Record( value <= 3.9 ), count() )
     then
