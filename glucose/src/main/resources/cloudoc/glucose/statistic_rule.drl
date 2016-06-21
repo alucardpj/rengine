@@ -117,3 +117,9 @@ rule "fbg variance"
                     init( $variance = 0.0 ),
                     action( $variance += ($value - $s.getAverageFBG()) ^ 2 ),
                     result( $variance = $variance / $s.getFbgCount() ) )
+    then
+        modify($s) {
+            setFbgVariance( $variance ),
+            setFbgVarianceUpdated(true);
+        }
+end
