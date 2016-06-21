@@ -94,3 +94,17 @@ rule "hyperglycemia count"
         }
 end
 
+//average FBG, 
+rule "average FBG"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( averageFBGUpdated == false )
+        accumulate( Record( acktype in (0, 2, 4), $value : value ),
+                    $avg : average( $value ) )
+    then
+        modify($s) {
+            setAverageFBG($avg.doubleValue()),
+            setAverageFBGUpdated(true);
+        }
+end
