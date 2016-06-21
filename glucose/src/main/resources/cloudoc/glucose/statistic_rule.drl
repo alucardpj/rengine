@@ -129,7 +129,7 @@ rule "fbg variance"
     
     when
         $s : Statistic( fbgVarianceUpdated == false )
-        $toysTotal : Number( $var : doubleValue )
+        Number( $var : doubleValue )
             from accumulate( Record( acktype in (0, 2, 4), $value : value ),
                     init( double variance = 0.0; ),
                     action( variance +=  ($value - $s.getAverageFBG())*($value - $s.getAverageFBG()); ),
@@ -149,7 +149,7 @@ rule "2 hpg variance"
     
     when
         $s : Statistic( twoHpgVarianceUpdated == false )
-        $toysTotal : Number( $var : doubleValue )
+        Number( $var : doubleValue )
             from accumulate( Record( acktype in (1, 3, 5), $value : value ),
                     init( double variance = 0.0; ),
                     action( variance +=  ($value - $s.getAverageTwoHpg())*($value - $s.getAverageTwoHpg()); ),
@@ -158,7 +158,7 @@ rule "2 hpg variance"
     then
         modify($s) {
             setTwoHpgVariance( $var ),
-            settwoHpgStandardDeviation( Math.sqrt($var) ),
-            settwoHpgVarianceUpdated(true);
+            setTwoHpgStandardDeviation( Math.sqrt($var) ),
+            setTwoHpgVarianceUpdated(true);
         }
 end
