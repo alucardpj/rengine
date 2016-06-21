@@ -1,18 +1,18 @@
 package cloudoc.glucose;
 
 //only diabetes
-rule "only diabetes"
-    ruleflow-group "determination"
-    salience -10
+// rule "only diabetes"
+//     ruleflow-group "determination"
+//     salience -10
 
-    when
-        Patient( isDiabetes == true )
-        not( Record() )
-    then
-        Conclusion c = new Conclusion();
-        c.setTitle("weekly report");
-        insert(c);
-end
+//     when
+//         Patient( isDiabetes == true )
+//         not( Record() )
+//     then
+//         Conclusion c = new Conclusion();
+//         c.setTitle("weekly report");
+//         insert(c);
+// end
 
 //fbgCount + twoHpgCount <= 2
 rule "fbgCount + twoHpgCount <= 2"
