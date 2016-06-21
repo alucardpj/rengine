@@ -3,6 +3,7 @@ package cloudoc.glucose;
 //fbg count
 rule "fbg count"
     ruleflow-group "statistic"
+    salience 10
 
 	when
 	    $s : Statistic( fbgCountUpdated == false )
@@ -93,6 +94,7 @@ end
 //average FBG
 rule "average FBG"
     ruleflow-group "statistic"
+    salience 10
     
     when
         $s : Statistic( averageFBGUpdated == false )
@@ -104,3 +106,14 @@ rule "average FBG"
             setAverageFBGUpdated(true);
         }
 end
+
+//fbg variance
+rule "fbg variance"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( fbgVarianceUpdated == false )
+        accumulate( Record( acktype in (0, 2, 4), $value : value ),
+                    init( $variance = 0.0 ),
+                    action( $variance += ($value - $s.getAverageFBG()) ^ 2 ),
+                    result(  )
