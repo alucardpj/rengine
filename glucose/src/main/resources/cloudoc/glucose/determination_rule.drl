@@ -7,7 +7,7 @@ rule "only diabetes"
     salience 30
 
     when
-        Patient( isDiabetes == true )
+        p : Patient( isDiabetes == true )
         not( exists( Record() ) )
     then
         Conclusion c = new Conclusion();
@@ -22,7 +22,7 @@ rule "fbgCount + twoHpgCount <= 2"
     salience 40
     
     when
-        Patient( isDiabetes == true )
+        p : Patient( isDiabetes == true )
         $s : Statistic( fbgCount + twoHpgCount <= 2 )
     then
         Conclusion c = new Conclusion();
