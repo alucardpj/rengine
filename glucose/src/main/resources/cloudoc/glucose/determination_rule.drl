@@ -8,7 +8,7 @@ rule "only diabetes"
 
     when
         p : Patient( isDiabetes == true )
-        not( exists( Record() ) )
+        not( Record() )
     then
         Conclusion c = new Conclusion();
         c.setTitle("weekly report");
