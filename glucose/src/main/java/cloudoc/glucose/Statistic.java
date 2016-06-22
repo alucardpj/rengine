@@ -336,9 +336,9 @@ public class Statistic implements java.io.Serializable
        this.conclusions.add(c);
    }
 
-   public void addConclusion(String title, String detail)
+   public void addConclusion(String title, String detail, String reason)
    {
-       cloudoc.glucose.Conclusion c = new cloudoc.glucose.Conclusion(title, detail);
+       cloudoc.glucose.Conclusion c = new cloudoc.glucose.Conclusion(title, detail, reason);
        this.conclusions.add(c);
    }
 
