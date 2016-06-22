@@ -2,7 +2,7 @@ package cloudoc.glucose;
 
 //fbg count
 rule "fbg count test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
     salience 10
 
 	when
@@ -15,7 +15,7 @@ end
 
 //fbg normal count
 rule "fbg normal count test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
 
     when
         $s : Statistic( )
@@ -27,7 +27,7 @@ end
 
 //2 hpg count
 rule "2 hpg count test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
 
 	when
 	    $s : Statistic()
@@ -39,7 +39,7 @@ end
 
 //2 hpg normal count
 rule "2 hpg normal count test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
 
     when
         $s : Statistic()
@@ -51,7 +51,7 @@ end
 
 //hypoglycemia count
 rule "hypoglycemia count test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
     
     when
         $s : Statistic()
@@ -63,7 +63,7 @@ end
 
 //hyperglycemia count
 rule "hyperglycemia count test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
     
     when
         $s : Statistic()
@@ -75,7 +75,7 @@ end
 
 //average FBG
 rule "average FBG test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
     salience 10
     
     when
@@ -88,7 +88,7 @@ end
 
 //average 2 Hpg
 rule "average 2 Hpg test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
     salience 10
     
     when
@@ -101,7 +101,7 @@ end
 
 //fbg variance
 rule "fbg variance test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
     
     when
         $s : Statistic()
@@ -118,7 +118,7 @@ end
 
 //2 hpg variance
 rule "2 hpg variance test"
-    ruleflow-group "statistic-test"
+    ruleflow-group "statistictest"
     
     when
         $s : Statistic()
