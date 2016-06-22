@@ -18,7 +18,7 @@ package cloudoc.glucose;
 rule "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    lock-on-active true
+    no-loop true
     
     when
         Patient( isDiabetes == true )
@@ -40,7 +40,7 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    no-loop true
+    lock-on-active true
 
     when
         Statistic( hypoglycemiaCount > 0 )
@@ -57,7 +57,7 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    no-loop true
+    lock-on-active true
 
     when
         Statistic( hypoglycemiaCount == 0 )
@@ -74,7 +74,7 @@ rule "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    no-loop true
+    lock-on-active true
 
     when
         Statistic( hyperglycemiaCount > 0 )
