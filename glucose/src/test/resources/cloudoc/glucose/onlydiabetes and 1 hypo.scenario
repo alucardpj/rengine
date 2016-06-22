@@ -16,7 +16,24 @@
       <isModify>false</isModify>
     </fact-data>
     <fact-data>
-      <type>Statistic</type>
+      <type>Record</type>
+      <fieldData>
+        <field-data>
+          <name>value</name>
+          <value>3.0</value>
+          <nature>4</nature>
+        </field-data>
+        <field-data>
+          <name>acktype</name>
+          <value>0</value>
+          <nature>4</nature>
+        </field-data>
+      </fieldData>
+      <name>$r</name>
+      <isModify>false</isModify>
+    </fact-data>
+    <fact-data>
+      <type>Statistictest</type>
       <fieldData>
         <field-data>
           <name>hypoglycemiaCount</name>
@@ -34,31 +51,14 @@
           <nature>4</nature>
         </field-data>
       </fieldData>
-      <name>$s</name>
-      <isModify>false</isModify>
-    </fact-data>
-    <fact-data>
-      <type>Record</type>
-      <fieldData>
-        <field-data>
-          <name>value</name>
-          <value>3.0</value>
-          <nature>4</nature>
-        </field-data>
-        <field-data>
-          <name>acktype</name>
-          <value>0</value>
-          <nature>4</nature>
-        </field-data>
-      </fieldData>
-      <name>$r</name>
+      <name>$st</name>
       <isModify>false</isModify>
     </fact-data>
     <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
       <name>determination</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>107</executionTimeResult>
+      <executionTimeResult>29</executionTimeResult>
       <numberOfRulesFired>2</numberOfRulesFired>
     </execution-trace>
     <expect-rule>
@@ -75,8 +75,23 @@
       <successResult>true</successResult>
       <actualResult>1</actualResult>
     </expect-rule>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>title</fieldName>
+          <expected>血糖监测情况</expected>
+          <actualResult>评估和目标</actualResult>
+          <successResult>true</successResult>
+          <explanation>[Conclusion] field [title] was [血糖监测情况].</explanation>
+          <operator>==</operator>
+          <nature>1</nature>
+        </expect-field>
+      </fieldValues>
+      <name>Conclusion</name>
+      <anonymous>true</anonymous>
+    </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-22 14:03:49.697 UTC</lastRunResult>
+  <lastRunResult>2016-06-22 14:46:16.509 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
