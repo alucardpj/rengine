@@ -12,6 +12,8 @@ public class Conclusion implements java.io.Serializable
    private java.lang.String title;
    private java.lang.String detail;
 
+   private java.lang.String reason;
+
    public Conclusion()
    {
    }
@@ -36,10 +38,22 @@ public class Conclusion implements java.io.Serializable
       this.detail = detail;
    }
 
-   public Conclusion(java.lang.String title, java.lang.String detail)
+   public java.lang.String getReason()
+   {
+      return this.reason;
+   }
+
+   public void setReason(java.lang.String reason)
+   {
+      this.reason = reason;
+   }
+
+   public Conclusion(java.lang.String title, java.lang.String detail,
+         java.lang.String reason)
    {
       this.title = title;
       this.detail = detail;
+      this.reason = reason;
    }
 
 }
