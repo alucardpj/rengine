@@ -79,7 +79,7 @@
       <name>statistictest</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>63</executionTimeResult>
+      <executionTimeResult>25</executionTimeResult>
       <numberOfRulesFired>10</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
@@ -87,42 +87,56 @@
         <expect-field>
           <fieldName>twoHpgNormalCount</fieldName>
           <expected>1</expected>
+          <successResult>true</successResult>
+          <explanation>[$st] field [twoHpgNormalCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>hypoglycemiaCount</fieldName>
           <expected>1</expected>
+          <successResult>true</successResult>
+          <explanation>[$st] field [hypoglycemiaCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>twoHpgCount</fieldName>
           <expected>3</expected>
+          <successResult>true</successResult>
+          <explanation>[$st] field [twoHpgCount] was [3].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>twoHpgVariance</fieldName>
           <expected>44.22222222222223</expected>
+          <successResult>true</successResult>
+          <explanation>[$st] field [twoHpgVariance] was [44.22222222222223].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>twoHpgStandardDeviation</fieldName>
           <expected>6.649979114420002</expected>
+          <successResult>true</successResult>
+          <explanation>[$st] field [twoHpgStandardDeviation] was [6.649979114420002].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>hyperglycemiaCount</fieldName>
           <expected>1</expected>
+          <successResult>true</successResult>
+          <explanation>[$st] field [hyperglycemiaCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>averageTwoHpg</fieldName>
           <expected>8.666666666666666</expected>
+          <successResult>true</successResult>
+          <explanation>[$st] field [averageTwoHpg] was [8.666666666666666].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
@@ -131,7 +145,7 @@
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-22 14:24:53.476 UTC</lastRunResult>
+  <lastRunResult>2016-06-22 14:31:08.54 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
