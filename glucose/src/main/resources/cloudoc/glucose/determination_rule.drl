@@ -21,7 +21,7 @@ rule "fbgCount + twoHpgCount <= 2"
 
     when
         Patient( isDiabetes == true )
-        $s : Statistic( fbgCount + twoHpgCount <= 2 )
+        $s : Statistictest( fbgCount + twoHpgCount <= 2 )
         // not Conclusion( reason == "fbgCount + twoHpgCount <= 2" ) from $s.conclusions
     then
         Conclusion c = new Conclusion();
@@ -45,7 +45,7 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
 
     when
         Patient( isDiabetes == true )
-        $s : Statistic( fbgCount + twoHpgCount <= 2, hypoglycemiaCount > 0 )
+        $s : Statistictest( fbgCount + twoHpgCount <= 2, hypoglycemiaCount > 0 )
         // not Conclusion( reason == "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0" ) from $s.conclusions
     then
         Conclusion c = new Conclusion();
@@ -64,7 +64,7 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
 
     when
         Patient( isDiabetes == true )
-        $s : Statistic( fbgCount + twoHpgCount <= 2, hypoglycemiaCount == 0 )
+        $s : Statistictest( fbgCount + twoHpgCount <= 2, hypoglycemiaCount == 0 )
         // not Conclusion( reason == "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0" ) from $s.conclusions
         // Statistic( hypoglycemiaCount == 0 )
     then
@@ -84,7 +84,7 @@ rule "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0"
 
     when
         Patient( isDiabetes == true )
-        $s : Statistic( fbgCount + twoHpgCount <= 2, hyperglycemiaCount > 0 )
+        $s : Statistictest( fbgCount + twoHpgCount <= 2, hyperglycemiaCount > 0 )
         // not Conclusion( reason == "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0" ) from $s.conclusions
         // Statistic( hyperglycemiaCount > 0 )
     then
