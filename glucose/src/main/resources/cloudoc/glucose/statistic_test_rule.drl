@@ -6,7 +6,7 @@ rule "fbg count test"
     salience 10
 
 	when
-	    $s : Statistic()
+	    $s : Statistictest()
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
 	then
@@ -18,7 +18,7 @@ rule "fbg normal count test"
     ruleflow-group "statistictest"
 
     when
-        $s : Statistic( )
+        $s : Statistictest( )
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
     then
@@ -30,7 +30,7 @@ rule "2 hpg count test"
     ruleflow-group "statistictest"
 
 	when
-	    $s : Statistic()
+	    $s : Statistictest()
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
 	then
@@ -42,7 +42,7 @@ rule "2 hpg normal count test"
     ruleflow-group "statistictest"
 
     when
-        $s : Statistic()
+        $s : Statistictest()
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
     then
@@ -54,7 +54,7 @@ rule "hypoglycemia count test"
     ruleflow-group "statistictest"
     
     when
-        $s : Statistic()
+        $s : Statistictest()
         Number( $count : intValue )
             from accumulate( Record( value <= 3.9 ), count() )
     then
@@ -66,7 +66,7 @@ rule "hyperglycemia count test"
     ruleflow-group "statistictest"
     
     when
-        $s : Statistic()
+        $s : Statistictest()
         Number( $count : intValue )
             from accumulate( Record( value > 16.7 ), count() )
     then
@@ -79,7 +79,7 @@ rule "average FBG test"
     salience 10
     
     when
-        $s : Statistic()
+        $s : Statistictest()
         accumulate( Record( acktype in (0, 2, 4), $value : value ),
                     $avg : average( $value ) )
     then
@@ -92,7 +92,7 @@ rule "average 2 Hpg test"
     salience 10
     
     when
-        $s : Statistic( )
+        $s : Statistictest( )
         accumulate( Record( acktype in (1, 3, 5), $value : value ),
                     $avg : average( $value ) )
     then
@@ -104,7 +104,7 @@ rule "fbg variance test"
     ruleflow-group "statistictest"
     
     when
-        $s : Statistic()
+        $s : Statistictest()
         Number( $var : doubleValue )
             from accumulate( Record( acktype in (0, 2, 4), $value : value ),
                     init( double variance = 0.0; ),
@@ -121,7 +121,7 @@ rule "2 hpg variance test"
     ruleflow-group "statistictest"
     
     when
-        $s : Statistic()
+        $s : Statistictest()
         Number( $var : doubleValue )
             from accumulate( Record( acktype in (1, 3, 5), $value : value ),
                     init( double variance = 0.0; ),
