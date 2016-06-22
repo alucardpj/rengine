@@ -58,19 +58,25 @@
       <name>determination</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>131</executionTimeResult>
-      <numberOfRulesFired>3</numberOfRulesFired>
+      <executionTimeResult>107</executionTimeResult>
+      <numberOfRulesFired>2</numberOfRulesFired>
     </execution-trace>
     <expect-rule>
       <ruleName>fbgCount + twoHpgCount &lt;= 2</ruleName>
       <expectedCount>1</expectedCount>
+      <explanation>Rule [fbgCount + twoHpgCount &lt;= 2] activated 1 times.</explanation>
+      <successResult>true</successResult>
+      <actualResult>1</actualResult>
     </expect-rule>
     <expect-rule>
       <ruleName>fbgCount + twoHpgCount &lt;= 2, and hypoglycemiaCount &gt; 0</ruleName>
       <expectedCount>1</expectedCount>
+      <explanation>Rule [fbgCount + twoHpgCount &lt;= 2, and hypoglycemiaCount &gt; 0] activated 1 times.</explanation>
+      <successResult>true</successResult>
+      <actualResult>1</actualResult>
     </expect-rule>
   </fixtures>
-  <lastRunResult>2016-06-22 13:17:16.214 UTC</lastRunResult>
+  <lastRunResult>2016-06-22 14:03:49.697 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
