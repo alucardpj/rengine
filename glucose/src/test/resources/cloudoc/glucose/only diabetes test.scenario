@@ -58,6 +58,18 @@
       <name>Conclusion</name>
       <anonymous>true</anonymous>
     </expect-fact>
+    <expect-fact>
+      <fieldValues>
+        <expect-field>
+          <fieldName>conclusion</fieldName>
+          <expected>周报</expected>
+          <operator>==</operator>
+          <nature>0</nature>
+        </expect-field>
+      </fieldValues>
+      <name>$s</name>
+      <anonymous>false</anonymous>
+    </expect-fact>
   </fixtures>
   <lastRunResult>2016-06-21 10:53:47.967 UTC</lastRunResult>
   <rules/>
