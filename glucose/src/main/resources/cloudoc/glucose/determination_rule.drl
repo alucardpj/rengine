@@ -39,15 +39,18 @@ rule "fbgCount + twoHpgCount <= 2"
 end
 
 rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
-    extends "fbgCount + twoHpgCount <= 2"
+    // extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
 
     when
-        Statistic( hypoglycemiaCount > 0 )
+        Patient( isDiabetes == true )
+        $s : Statistic( fbgCount + twoHpgCount <= 2, hypoglycemiaCount > 0 )
+        not Conclusion( reason: "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0" ) from $s.conclusions
     then
         Conclusion c = new Conclusion();
         c.setTitle("hypoglycemiaCount > 0");
+        c.setReason("fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0");
         // insert(c);
         modify($s) {
             addConclusion(c);
@@ -55,15 +58,19 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
 end
 
 rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
-    extends "fbgCount + twoHpgCount <= 2"
+    // extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
 
     when
-        Statistic( hypoglycemiaCount == 0 )
+        Patient( isDiabetes == true )
+        $s : Statistic( fbgCount + twoHpgCount <= 2, hypoglycemiaCount == 0 )
+        not Conclusion( reason: "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0" ) from $s.conclusions
+        // Statistic( hypoglycemiaCount == 0 )
     then
         Conclusion c = new Conclusion();
         c.setTitle("hypoglycemiaCount == 0");
+        c.setReason("fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0");
         // insert(c);
         modify($s) {
             addConclusion(c);
@@ -71,15 +78,19 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
 end
 
 rule "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0"
-    extends "fbgCount + twoHpgCount <= 2"
+    // extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
 
     when
-        Statistic( hyperglycemiaCount > 0 )
+        Patient( isDiabetes == true )
+        $s : Statistic( fbgCount + twoHpgCount <= 2, hyperglycemiaCount > 0 )
+        not Conclusion( reason: "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0" ) from $s.conclusions
+        // Statistic( hyperglycemiaCount > 0 )
     then
         Conclusion c = new Conclusion();
         c.setTitle("hyperglycemiaCount > 0");
+        c.setReason("fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0");
         // insert(c);
         modify($s) {
             addConclusion(c);
