@@ -1,134 +1,110 @@
 package cloudoc.glucose;
 
 //fbg count
-rule "fbg count"
-    ruleflow-group "statistic"
+rule "fbg count test"
+    ruleflow-group "statistic-test"
     salience 10
 
 	when
-	    $s : Statistic( fbgCountUpdated == false )
+	    $s : Statistic()
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
 	then
-	    modify($s) {
-	        setFbgCount( $count ),
-	        setFbgCountUpdated(true);
-	    }
+        $s.setFbgCount( $count );
 end
 
 //fbg normal count
-rule "fbg normal count"
-    ruleflow-group "statistic"
+rule "fbg normal count test"
+    ruleflow-group "statistic-test"
 
     when
-        $s : Statistic( fbgNormalCountUpdated == false )
+        $s : Statistic( )
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
     then
-	    modify($s) {
-	        setFbgNormalCount( $count ),
-	        setFbgNormalCountUpdated(true);
-	    }
+        $s.setFbgNormalCount( $count );
 end
 
 //2 hpg count
-rule "2 hpg count"
-    ruleflow-group "statistic"
+rule "2 hpg count test"
+    ruleflow-group "statistic-test"
 
 	when
-	    $s : Statistic( twoHpgCountUpdated == false )
+	    $s : Statistic()
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
 	then
-	    modify($s) {
-	        setTwoHpgCount( $count ),
-	        setTwoHpgCountUpdated(true);
-	    }
+        $s.setTwoHpgCount( $count );
 end
 
 //2 hpg normal count
-rule "2 hpg normal count"
-    ruleflow-group "statistic"
+rule "2 hpg normal count test"
+    ruleflow-group "statistic-test"
 
     when
-        $s : Statistic( twoHpgNormalCountUpdated == false )
+        $s : Statistic()
 		Number( $count : intValue )
 		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
     then
-	    modify($s) {
-	        setTwoHpgNormalCount( $count ),
-	        setTwoHpgNormalCountUpdated(true);
-	    }
+        $s.setTwoHpgNormalCount( $count );
 end
 
 //hypoglycemia count
-rule "hypoglycemia count"
-    ruleflow-group "statistic"
+rule "hypoglycemia count test"
+    ruleflow-group "statistic-test"
     
     when
-        $s : Statistic( hypoglycemiaCountUpdated == false )
+        $s : Statistic()
         Number( $count : intValue )
             from accumulate( Record( value <= 3.9 ), count() )
     then
-        modify($s) {
-            setHypoglycemiaCount( $count ),
-            setHypoglycemiaCountUpdated(true);
-        }
+        $s.setHypoglycemiaCount( $count );
 end
 
 //hyperglycemia count
-rule "hyperglycemia count"
-    ruleflow-group "statistic"
+rule "hyperglycemia count test"
+    ruleflow-group "statistic-test"
     
     when
-        $s : Statistic( hyperglycemiaCountUpdated == false )
+        $s : Statistic()
         Number( $count : intValue )
             from accumulate( Record( value > 16.7 ), count() )
     then
-        modify($s) {
-            setHyperglycemiaCount( $count ),
-            setHyperglycemiaCountUpdated(true);
-        }
+        $s.setHyperglycemiaCount( $count );
 end
 
 //average FBG
-rule "average FBG"
-    ruleflow-group "statistic"
+rule "average FBG test"
+    ruleflow-group "statistic-test"
     salience 10
     
     when
-        $s : Statistic( averageFBGUpdated == false )
+        $s : Statistic()
         accumulate( Record( acktype in (0, 2, 4), $value : value ),
                     $avg : average( $value ) )
     then
-        modify($s) {
-            setAverageFBG($avg.doubleValue()),
-            setAverageFBGUpdated(true);
-        }
+        $s.setAverageFBG($avg.doubleValue());
 end
 
 //average 2 Hpg
-rule "average 2 Hpg"
-    ruleflow-group "statistic"
+rule "average 2 Hpg test"
+    ruleflow-group "statistic-test"
     salience 10
     
     when
-        $s : Statistic( averageTwoHpgUpdated == false )
+        $s : Statistic( )
         accumulate( Record( acktype in (1, 3, 5), $value : value ),
                     $avg : average( $value ) )
     then
-        modify($s) {
-            setAverageTwoHpg($avg.doubleValue()),
-            setAverageTwoHpgUpdated(true);
-        }
+        $s.setAverageTwoHpg($avg.doubleValue());
 end
 
 //fbg variance
-rule "fbg variance"
-    ruleflow-group "statistic"
+rule "fbg variance test"
+    ruleflow-group "statistic-test"
     
     when
-        $s : Statistic( fbgVarianceUpdated == false )
+        $s : Statistic()
         Number( $var : doubleValue )
             from accumulate( Record( acktype in (0, 2, 4), $value : value ),
                     init( double variance = 0.0; ),
@@ -136,19 +112,16 @@ rule "fbg variance"
                     reverse( variance -= ($value - $s.getAverageFBG())*($value - $s.getAverageFBG()); ),
                     result( new Double( variance / $s.getFbgCount() ) ) )
     then
-        modify($s) {
-            setFbgVariance( $var ),
-            setFbgStandardDeviation( Math.sqrt($var) ),
-            setFbgVarianceUpdated(true);
-        }
+        $s.setFbgVariance( $var );
+        $s.setFbgStandardDeviation( Math.sqrt($var) );
 end
 
 //2 hpg variance
-rule "2 hpg variance"
-    ruleflow-group "statistic"
+rule "2 hpg variance test"
+    ruleflow-group "statistic-test"
     
     when
-        $s : Statistic( twoHpgVarianceUpdated == false )
+        $s : Statistic()
         Number( $var : doubleValue )
             from accumulate( Record( acktype in (1, 3, 5), $value : value ),
                     init( double variance = 0.0; ),
@@ -156,9 +129,6 @@ rule "2 hpg variance"
                     reverse( variance -= ($value - $s.getAverageTwoHpg())*($value - $s.getAverageTwoHpg()); ),
                     result( new Double( variance / $s.getTwoHpgCount() ) ) )
     then
-        modify($s) {
-            setTwoHpgVariance( $var ),
-            setTwoHpgStandardDeviation( Math.sqrt($var) ),
-            setTwoHpgVarianceUpdated(true);
-        }
+        $s.setTwoHpgVariance( $var );
+        $s.setTwoHpgStandardDeviation( Math.sqrt($var) );
 end
