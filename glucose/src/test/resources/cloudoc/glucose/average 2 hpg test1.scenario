@@ -76,10 +76,10 @@
       <isModify>false</isModify>
     </fact-data>
     <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
-      <name>statistic-test</name>
+      <name>statistictest</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
-      <executionTimeResult>31</executionTimeResult>
+      <executionTimeResult>63</executionTimeResult>
       <numberOfRulesFired>10</numberOfRulesFired>
     </execution-trace>
     <expect-fact>
@@ -147,7 +147,7 @@
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-22 14:12:38.135 UTC</lastRunResult>
+  <lastRunResult>2016-06-22 14:24:53.476 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
