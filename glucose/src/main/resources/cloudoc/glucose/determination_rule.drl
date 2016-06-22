@@ -18,17 +18,19 @@ package cloudoc.glucose;
 rule "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    no-loop true
-    
+
     when
         Patient( isDiabetes == true )
         $s : Statistic( fbgCount + twoHpgCount <= 2 )
+        not Conclusion( reason: "fbgCount + twoHpgCount <= 2" ) from $s.conclusions
     then
         Conclusion c = new Conclusion();
         c.setTitle("\u8840\u7cd6\u76d1\u6d4b\u60c5\u51b5");
+        c.setReason("fbgCount + twoHpgCount <= 2");
         // insert(c);
         Conclusion c2 = new Conclusion();
         c2.setTitle("\u8bc4\u4f30\u548c\u76ee\u6807");
+        c2.setReason("fbgCount + twoHpgCount <= 2");
         // insert(c2);
         modify($s) {
             addConclusion(c),
@@ -40,7 +42,6 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    lock-on-active true
 
     when
         Statistic( hypoglycemiaCount > 0 )
@@ -57,7 +58,6 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    lock-on-active true
 
     when
         Statistic( hypoglycemiaCount == 0 )
@@ -74,7 +74,6 @@ rule "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0"
     extends "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
-    lock-on-active true
 
     when
         Statistic( hyperglycemiaCount > 0 )
