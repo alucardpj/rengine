@@ -63,11 +63,11 @@
     </execution-trace>
     <expect-rule>
       <ruleName>fbgCount + twoHpgCount &lt;= 2</ruleName>
-      <expectedFire>true</expectedFire>
+      <expectedCount>1</expectedCount>
     </expect-rule>
     <expect-rule>
       <ruleName>fbgCount + twoHpgCount &lt;= 2, and hypoglycemiaCount &gt; 0</ruleName>
-      <expectedFire>true</expectedFire>
+      <expectedCount>1</expectedCount>
     </expect-rule>
   </fixtures>
   <lastRunResult>2016-06-22 13:17:16.214 UTC</lastRunResult>
