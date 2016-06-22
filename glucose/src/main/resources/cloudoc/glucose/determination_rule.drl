@@ -18,6 +18,7 @@ package cloudoc.glucose;
 rule "fbgCount + twoHpgCount <= 2"
     ruleflow-group "determination"
     // salience 40
+    no-loop true
     
     when
         Patient( isDiabetes == true )
