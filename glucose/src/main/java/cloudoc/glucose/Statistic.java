@@ -336,6 +336,12 @@ public class Statistic implements java.io.Serializable
        this.conclusions.add(c);
    }
 
+   public void addConclusion(String title, String detail)
+   {
+       cloudoc.glucose.Conclusion c = new cloudoc.glucose.Conclusion(title, detail);
+       this.conclusions.add(c);
+   }
+
    public Statistic(java.lang.Integer fbgCount, java.lang.Integer fbgNormalCount,
          java.lang.Double fbgNormalPercentage, java.lang.Integer twoHpgCount,
          java.lang.Double twoHpgNormalPercentage,
