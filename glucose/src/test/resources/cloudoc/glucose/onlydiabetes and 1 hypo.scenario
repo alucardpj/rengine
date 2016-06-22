@@ -107,7 +107,7 @@
       <anonymous>true</anonymous>
     </expect-fact>
   </fixtures>
-  <lastRunResult>2016-06-22 02:50:41.501 UTC</lastRunResult>
+  <lastRunResult>2016-06-22 13:17:16.214 UTC</lastRunResult>
   <rules/>
   <inclusive>false</inclusive>
   <packageName>cloudoc.glucose</packageName>
