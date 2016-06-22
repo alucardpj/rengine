@@ -1,0 +1,164 @@
+package cloudoc.glucose;
+
+//fbg count
+rule "fbg count"
+    ruleflow-group "statistic"
+    salience 10
+
+	when
+	    $s : Statistic( fbgCountUpdated == false )
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (0, 2, 4) ), count() )
+	then
+	    modify($s) {
+	        setFbgCount( $count ),
+	        setFbgCountUpdated(true);
+	    }
+end
+
+//fbg normal count
+rule "fbg normal count"
+    ruleflow-group "statistic"
+
+    when
+        $s : Statistic( fbgNormalCountUpdated == false )
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (0, 2, 4), level == 2 ), count() )
+    then
+	    modify($s) {
+	        setFbgNormalCount( $count ),
+	        setFbgNormalCountUpdated(true);
+	    }
+end
+
+//2 hpg count
+rule "2 hpg count"
+    ruleflow-group "statistic"
+
+	when
+	    $s : Statistic( twoHpgCountUpdated == false )
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (1, 3, 5) ), count() )
+	then
+	    modify($s) {
+	        setTwoHpgCount( $count ),
+	        setTwoHpgCountUpdated(true);
+	    }
+end
+
+//2 hpg normal count
+rule "2 hpg normal count"
+    ruleflow-group "statistic"
+
+    when
+        $s : Statistic( twoHpgNormalCountUpdated == false )
+		Number( $count : intValue )
+		    from accumulate( Record( acktype in (1, 3, 5), level == 2 ), count() )
+    then
+	    modify($s) {
+	        setTwoHpgNormalCount( $count ),
+	        setTwoHpgNormalCountUpdated(true);
+	    }
+end
+
+//hypoglycemia count
+rule "hypoglycemia count"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( hypoglycemiaCountUpdated == false )
+        Number( $count : intValue )
+            from accumulate( Record( value <= 3.9 ), count() )
+    then
+        modify($s) {
+            setHypoglycemiaCount( $count ),
+            setHypoglycemiaCountUpdated(true);
+        }
+end
+
+//hyperglycemia count
+rule "hyperglycemia count"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( hyperglycemiaCountUpdated == false )
+        Number( $count : intValue )
+            from accumulate( Record( value > 16.7 ), count() )
+    then
+        modify($s) {
+            setHyperglycemiaCount( $count ),
+            setHyperglycemiaCountUpdated(true);
+        }
+end
+
+//average FBG
+rule "average FBG"
+    ruleflow-group "statistic"
+    salience 10
+    
+    when
+        $s : Statistic( averageFBGUpdated == false )
+        accumulate( Record( acktype in (0, 2, 4), $value : value ),
+                    $avg : average( $value ) )
+    then
+        modify($s) {
+            setAverageFBG($avg.doubleValue()),
+            setAverageFBGUpdated(true);
+        }
+end
+
+//average 2 Hpg
+rule "average 2 Hpg"
+    ruleflow-group "statistic"
+    salience 10
+    
+    when
+        $s : Statistic( averageTwoHpgUpdated == false )
+        accumulate( Record( acktype in (1, 3, 5), $value : value ),
+                    $avg : average( $value ) )
+    then
+        modify($s) {
+            setAverageTwoHpg($avg.doubleValue()),
+            setAverageTwoHpgUpdated(true);
+        }
+end
+
+//fbg variance
+rule "fbg variance"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( fbgVarianceUpdated == false )
+        Number( $var : doubleValue )
+            from accumulate( Record( acktype in (0, 2, 4), $value : value ),
+                    init( double variance = 0.0; ),
+                    action( variance +=  ($value - $s.getAverageFBG())*($value - $s.getAverageFBG()); ),
+                    reverse( variance -= ($value - $s.getAverageFBG())*($value - $s.getAverageFBG()); ),
+                    result( new Double( variance / $s.getFbgCount() ) ) )
+    then
+        modify($s) {
+            setFbgVariance( $var ),
+            setFbgStandardDeviation( Math.sqrt($var) ),
+            setFbgVarianceUpdated(true);
+        }
+end
+
+//2 hpg variance
+rule "2 hpg variance"
+    ruleflow-group "statistic"
+    
+    when
+        $s : Statistic( twoHpgVarianceUpdated == false )
+        Number( $var : doubleValue )
+            from accumulate( Record( acktype in (1, 3, 5), $value : value ),
+                    init( double variance = 0.0; ),
+                    action( variance +=  ($value - $s.getAverageTwoHpg())*($value - $s.getAverageTwoHpg()); ),
+                    reverse( variance -= ($value - $s.getAverageTwoHpg())*($value - $s.getAverageTwoHpg()); ),
+                    result( new Double( variance / $s.getTwoHpgCount() ) ) )
+    then
+        modify($s) {
+            setTwoHpgVariance( $var ),
+            setTwoHpgStandardDeviation( Math.sqrt($var) ),
+            setTwoHpgVarianceUpdated(true);
+        }
+end
