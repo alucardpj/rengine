@@ -67,6 +67,6 @@
     <imports/>
   </imports>
   <ksessions>
-    <string>ksession1</string>
+    <string>ksession2</string>
   </ksessions>
 </scenario>
