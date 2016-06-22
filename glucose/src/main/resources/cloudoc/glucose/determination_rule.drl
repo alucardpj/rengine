@@ -27,14 +27,14 @@ rule "fbgCount + twoHpgCount <= 2"
         Conclusion c = new Conclusion();
         c.setTitle("\u8840\u7cd6\u76d1\u6d4b\u60c5\u51b5");
         c.setReason("fbgCount + twoHpgCount <= 2");
-        // insert(c);
+        insert(c);
         Conclusion c2 = new Conclusion();
         c2.setTitle("\u8bc4\u4f30\u548c\u76ee\u6807");
         c2.setReason("fbgCount + twoHpgCount <= 2");
-        // insert(c2);
+        insert(c2);
         // modify($s) {
-            $s.addConclusion(c);
-            $s.addConclusion(c2);
+            // $s.addConclusion(c);
+            // $s.addConclusion(c2);
         // }
 end
 
@@ -51,9 +51,9 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0"
         Conclusion c = new Conclusion();
         c.setTitle("hypoglycemiaCount > 0");
         c.setReason("fbgCount + twoHpgCount <= 2, and hypoglycemiaCount > 0");
-        // insert(c);
+        insert(c);
         // modify($s) {
-            $s.addConclusion(c);
+            // $s.addConclusion(c);
         // }
 end
 
@@ -71,9 +71,9 @@ rule "fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0"
         Conclusion c = new Conclusion();
         c.setTitle("hypoglycemiaCount == 0");
         c.setReason("fbgCount + twoHpgCount <= 2, and hypoglycemiaCount == 0");
-        // insert(c);
+        insert(c);
         // modify($s) {
-            $s.addConclusion(c);
+            // $s.addConclusion(c);
         // }
 end
 
@@ -91,8 +91,8 @@ rule "fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0"
         Conclusion c = new Conclusion();
         c.setTitle("hyperglycemiaCount > 0");
         c.setReason("fbgCount + twoHpgCount <= 2, and hyperglycemiaCount > 0");
-        // insert(c);
+        insert(c);
         // modify($s) {
-            $s.addConclusion(c);
+            // $s.addConclusion(c);
         // }
 end
