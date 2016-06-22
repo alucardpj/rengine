@@ -61,51 +61,14 @@
       <executionTimeResult>131</executionTimeResult>
       <numberOfRulesFired>3</numberOfRulesFired>
     </execution-trace>
-    <expect-fact>
-      <fieldValues>
-        <expect-field>
-          <fieldName>title</fieldName>
-          <expected>血糖监测情况</expected>
-          <actualResult>评估和目标</actualResult>
-          <successResult>true</successResult>
-          <explanation>[Conclusion] field [title] was [血糖监测情况].</explanation>
-          <operator>==</operator>
-          <nature>1</nature>
-        </expect-field>
-      </fieldValues>
-      <name>Conclusion</name>
-      <anonymous>true</anonymous>
-    </expect-fact>
-    <expect-fact>
-      <fieldValues>
-        <expect-field>
-          <fieldName>title</fieldName>
-          <expected>评估和目标</expected>
-          <actualResult>高血糖=0</actualResult>
-          <successResult>true</successResult>
-          <explanation>[Conclusion] field [title] was [评估和目标].</explanation>
-          <operator>==</operator>
-          <nature>1</nature>
-        </expect-field>
-      </fieldValues>
-      <name>Conclusion</name>
-      <anonymous>true</anonymous>
-    </expect-fact>
-    <expect-fact>
-      <fieldValues>
-        <expect-field>
-          <fieldName>title</fieldName>
-          <expected>低血糖&gt;0</expected>
-          <actualResult>评估和目标</actualResult>
-          <successResult>true</successResult>
-          <explanation>[Conclusion] field [title] was [低血糖&gt;0].</explanation>
-          <operator>==</operator>
-          <nature>1</nature>
-        </expect-field>
-      </fieldValues>
-      <name>Conclusion</name>
-      <anonymous>true</anonymous>
-    </expect-fact>
+    <expect-rule>
+      <ruleName>fbgCount + twoHpgCount &lt;= 2</ruleName>
+      <expectedFire>true</expectedFire>
+    </expect-rule>
+    <expect-rule>
+      <ruleName>fbgCount + twoHpgCount &lt;= 2, and hypoglycemiaCount &gt; 0</ruleName>
+      <expectedFire>true</expectedFire>
+    </expect-rule>
   </fixtures>
   <lastRunResult>2016-06-22 13:17:16.214 UTC</lastRunResult>
   <rules/>
