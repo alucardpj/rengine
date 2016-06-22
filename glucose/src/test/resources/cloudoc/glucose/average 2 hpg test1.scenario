@@ -26,12 +26,6 @@
       <isModify>false</isModify>
     </fact-data>
     <fact-data>
-      <type>Statistic</type>
-      <fieldData/>
-      <name>$s</name>
-      <isModify>false</isModify>
-    </fact-data>
-    <fact-data>
       <type>Record</type>
       <fieldData>
         <field-data>
@@ -75,6 +69,12 @@
       <name>$r2</name>
       <isModify>false</isModify>
     </fact-data>
+    <fact-data>
+      <type>Statistictest</type>
+      <fieldData/>
+      <name>$st</name>
+      <isModify>false</isModify>
+    </fact-data>
     <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
       <name>statistictest</name>
     </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
@@ -87,63 +87,47 @@
         <expect-field>
           <fieldName>twoHpgNormalCount</fieldName>
           <expected>1</expected>
-          <successResult>true</successResult>
-          <explanation>[$s] field [twoHpgNormalCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>hypoglycemiaCount</fieldName>
           <expected>1</expected>
-          <successResult>true</successResult>
-          <explanation>[$s] field [hypoglycemiaCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>twoHpgCount</fieldName>
           <expected>3</expected>
-          <successResult>true</successResult>
-          <explanation>[$s] field [twoHpgCount] was [3].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>twoHpgVariance</fieldName>
           <expected>44.22222222222223</expected>
-          <actualResult>44.22222222222223</actualResult>
-          <successResult>true</successResult>
-          <explanation>[$s] field [twoHpgVariance] was [44.22222222222223].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>twoHpgStandardDeviation</fieldName>
           <expected>6.649979114420002</expected>
-          <successResult>true</successResult>
-          <explanation>[$s] field [twoHpgStandardDeviation] was [6.649979114420002].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>hyperglycemiaCount</fieldName>
           <expected>1</expected>
-          <successResult>true</successResult>
-          <explanation>[$s] field [hyperglycemiaCount] was [1].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
         <expect-field>
           <fieldName>averageTwoHpg</fieldName>
           <expected>8.666666666666666</expected>
-          <actualResult>8.666666666666666</actualResult>
-          <successResult>true</successResult>
-          <explanation>[$s] field [averageTwoHpg] was [8.666666666666666].</explanation>
           <operator>==</operator>
           <nature>1</nature>
         </expect-field>
       </fieldValues>
-      <name>$s</name>
+      <name>$st</name>
       <anonymous>false</anonymous>
     </expect-fact>
   </fixtures>
