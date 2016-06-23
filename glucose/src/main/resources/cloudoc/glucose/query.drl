@@ -1,5 +1,5 @@
 package cloudoc.glucose;
 
 query "result conclusions" 
-    $conclusions : Conclusion()
+    conclusion : Conclusion()
 end
