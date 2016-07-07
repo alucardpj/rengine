@@ -51,8 +51,6 @@ public class Statistictest implements java.io.Serializable
    @org.kie.api.definition.type.Label("??2????????")
    private java.lang.Integer twoHpgNormalCount = 0;
 
-   private java.util.List<cloudoc.glucose.Conclusion> conclusions = new java.util.ArrayList<cloudoc.glucose.Conclusion>();
-
    public Statistictest()
    {
    }
@@ -197,17 +195,6 @@ public class Statistictest implements java.io.Serializable
       this.twoHpgNormalCount = twoHpgNormalCount;
    }
 
-   public java.util.List<cloudoc.glucose.Conclusion> getConclusions()
-   {
-      return this.conclusions;
-   }
-
-   public void setConclusions(
-         java.util.List<cloudoc.glucose.Conclusion> conclusions)
-   {
-      this.conclusions = conclusions;
-   }
-
    public void addConclusion(cloudoc.glucose.Conclusion c)
    {
       this.conclusions.add(c);
@@ -227,8 +214,7 @@ public class Statistictest implements java.io.Serializable
          java.lang.Double fbgStandardDeviation, java.lang.Double fbgVariance,
          java.lang.Double averageTwoHpg,
          java.lang.Double twoHpgStandardDeviation,
-         java.lang.Double twoHpgVariance, java.lang.Integer twoHpgNormalCount,
-         java.util.List<cloudoc.glucose.Conclusion> conclusions)
+         java.lang.Double twoHpgVariance, java.lang.Integer twoHpgNormalCount)
    {
       this.fbgCount = fbgCount;
       this.fbgNormalCount = fbgNormalCount;
@@ -244,7 +230,6 @@ public class Statistictest implements java.io.Serializable
       this.twoHpgStandardDeviation = twoHpgStandardDeviation;
       this.twoHpgVariance = twoHpgVariance;
       this.twoHpgNormalCount = twoHpgNormalCount;
-      this.conclusions = conclusions;
    }
 
 }
