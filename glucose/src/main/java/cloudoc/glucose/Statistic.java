@@ -71,8 +71,6 @@ public class Statistic implements java.io.Serializable
 
    private java.lang.Boolean twoHpgVarianceUpdated = false;
 
-   private java.util.List<cloudoc.glucose.Conclusion> conclusions = new java.util.ArrayList<cloudoc.glucose.Conclusion>();
-
    public Statistic()
    {
    }
@@ -320,26 +318,15 @@ public class Statistic implements java.io.Serializable
       this.twoHpgVarianceUpdated = twoHpgVarianceUpdated;
    }
 
-   public java.util.List<cloudoc.glucose.Conclusion> getConclusions()
-   {
-      return this.conclusions;
-   }
-
-   public void setConclusions(
-         java.util.List<cloudoc.glucose.Conclusion> conclusions)
-   {
-      this.conclusions = conclusions;
-   }
-   
    public void addConclusion(cloudoc.glucose.Conclusion c)
    {
-       this.conclusions.add(c);
+      this.conclusions.add(c);
    }
 
    public void addConclusion(String title, String detail, String reason)
    {
-       cloudoc.glucose.Conclusion c = new cloudoc.glucose.Conclusion(title, detail, reason);
-       this.conclusions.add(c);
+      cloudoc.glucose.Conclusion c = new cloudoc.glucose.Conclusion(title, detail, reason);
+      this.conclusions.add(c);
    }
 
    public Statistic(java.lang.Integer fbgCount, java.lang.Integer fbgNormalCount,
@@ -360,8 +347,7 @@ public class Statistic implements java.io.Serializable
          java.lang.Boolean averageFBGUpdated,
          java.lang.Boolean fbgVarianceUpdated,
          java.lang.Boolean averageTwoHpgUpdated,
-         java.lang.Boolean twoHpgVarianceUpdated,
-         java.util.List<cloudoc.glucose.Conclusion> conclusions)
+         java.lang.Boolean twoHpgVarianceUpdated)
    {
       this.fbgCount = fbgCount;
       this.fbgNormalCount = fbgNormalCount;
@@ -387,7 +373,6 @@ public class Statistic implements java.io.Serializable
       this.fbgVarianceUpdated = fbgVarianceUpdated;
       this.averageTwoHpgUpdated = averageTwoHpgUpdated;
       this.twoHpgVarianceUpdated = twoHpgVarianceUpdated;
-      this.conclusions = conclusions;
    }
 
 }
