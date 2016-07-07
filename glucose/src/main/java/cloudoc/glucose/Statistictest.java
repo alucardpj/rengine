@@ -195,17 +195,6 @@ public class Statistictest implements java.io.Serializable
       this.twoHpgNormalCount = twoHpgNormalCount;
    }
 
-   public void addConclusion(cloudoc.glucose.Conclusion c)
-   {
-      this.conclusions.add(c);
-   }
-
-   public void addConclusion(String title, String detail, String reason)
-   {
-      cloudoc.glucose.Conclusion c = new cloudoc.glucose.Conclusion(title, detail, reason);
-      this.conclusions.add(c);
-   }
-
    public Statistictest(java.lang.Integer fbgCount,
          java.lang.Integer fbgNormalCount, java.lang.Double fbgNormalPercentage,
          java.lang.Integer twoHpgCount, java.lang.Double twoHpgNormalPercentage,
