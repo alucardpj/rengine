@@ -32,31 +32,26 @@
       <name>$r</name>
       <isModify>false</isModify>
     </fact-data>
+    <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
+      <name>determination</name>
+    </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <fact-data>
-      <type>Statistictest</type>
+      <type>Statistic</type>
       <fieldData>
+        <field-data>
+          <name>twoHpgCount</name>
+          <value>1</value>
+          <nature>4</nature>
+        </field-data>
         <field-data>
           <name>hypoglycemiaCount</name>
           <value>1</value>
           <nature>4</nature>
         </field-data>
-        <field-data>
-          <name>fbgCount</name>
-          <value>1</value>
-          <nature>4</nature>
-        </field-data>
-        <field-data>
-          <name>twoHpgCount</name>
-          <value>0</value>
-          <nature>4</nature>
-        </field-data>
       </fieldData>
-      <name>$st</name>
+      <name>$s</name>
       <isModify>false</isModify>
     </fact-data>
-    <org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
-      <name>determination</name>
-    </org.drools.workbench.models.testscenarios.shared.ActivateRuleFlowGroup>
     <execution-trace>
       <executionTimeResult>29</executionTimeResult>
       <numberOfRulesFired>2</numberOfRulesFired>
