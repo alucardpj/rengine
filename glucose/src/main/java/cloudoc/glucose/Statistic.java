@@ -318,17 +318,6 @@ public class Statistic implements java.io.Serializable
       this.twoHpgVarianceUpdated = twoHpgVarianceUpdated;
    }
 
-   public void addConclusion(cloudoc.glucose.Conclusion c)
-   {
-      this.conclusions.add(c);
-   }
-
-   public void addConclusion(String title, String detail, String reason)
-   {
-      cloudoc.glucose.Conclusion c = new cloudoc.glucose.Conclusion(title, detail, reason);
-      this.conclusions.add(c);
-   }
-
    public Statistic(java.lang.Integer fbgCount, java.lang.Integer fbgNormalCount,
          java.lang.Double fbgNormalPercentage, java.lang.Integer twoHpgCount,
          java.lang.Double twoHpgNormalPercentage,
