@@ -51,26 +51,6 @@ public class Statistic implements java.io.Serializable
    @org.kie.api.definition.type.Label("??2????????")
    private java.lang.Integer twoHpgNormalCount = 0;
 
-   private java.lang.Boolean fbgCountUpdated = false;
-
-   private java.lang.Boolean fbgNormalCountUpdated = false;
-
-   private java.lang.Boolean twoHpgCountUpdated = false;
-
-   private java.lang.Boolean twoHpgNormalCountUpdated = false;
-
-   private java.lang.Boolean hypoglycemiaCountUpdated = false;
-
-   private java.lang.Boolean hyperglycemiaCountUpdated = false;
-
-   private java.lang.Boolean averageFBGUpdated = false;
-
-   private java.lang.Boolean fbgVarianceUpdated = false;
-
-   private java.lang.Boolean averageTwoHpgUpdated = false;
-
-   private java.lang.Boolean twoHpgVarianceUpdated = false;
-
    public Statistic()
    {
    }
@@ -215,109 +195,6 @@ public class Statistic implements java.io.Serializable
       this.twoHpgNormalCount = twoHpgNormalCount;
    }
 
-   public java.lang.Boolean getFbgCountUpdated()
-   {
-      return this.fbgCountUpdated;
-   }
-
-   public void setFbgCountUpdated(java.lang.Boolean fbgCountUpdated)
-   {
-      this.fbgCountUpdated = fbgCountUpdated;
-   }
-
-   public java.lang.Boolean getFbgNormalCountUpdated()
-   {
-      return this.fbgNormalCountUpdated;
-   }
-
-   public void setFbgNormalCountUpdated(java.lang.Boolean fbgNormalCountUpdated)
-   {
-      this.fbgNormalCountUpdated = fbgNormalCountUpdated;
-   }
-
-   public java.lang.Boolean getTwoHpgCountUpdated()
-   {
-      return this.twoHpgCountUpdated;
-   }
-
-   public void setTwoHpgCountUpdated(java.lang.Boolean twoHpgCountUpdated)
-   {
-      this.twoHpgCountUpdated = twoHpgCountUpdated;
-   }
-
-   public java.lang.Boolean getTwoHpgNormalCountUpdated()
-   {
-      return this.twoHpgNormalCountUpdated;
-   }
-
-   public void setTwoHpgNormalCountUpdated(
-         java.lang.Boolean twoHpgNormalCountUpdated)
-   {
-      this.twoHpgNormalCountUpdated = twoHpgNormalCountUpdated;
-   }
-
-   public java.lang.Boolean getHypoglycemiaCountUpdated()
-   {
-      return this.hypoglycemiaCountUpdated;
-   }
-
-   public void setHypoglycemiaCountUpdated(
-         java.lang.Boolean hypoglycemiaCountUpdated)
-   {
-      this.hypoglycemiaCountUpdated = hypoglycemiaCountUpdated;
-   }
-
-   public java.lang.Boolean getHyperglycemiaCountUpdated()
-   {
-      return this.hyperglycemiaCountUpdated;
-   }
-
-   public void setHyperglycemiaCountUpdated(
-         java.lang.Boolean hyperglycemiaCountUpdated)
-   {
-      this.hyperglycemiaCountUpdated = hyperglycemiaCountUpdated;
-   }
-
-   public java.lang.Boolean getAverageFBGUpdated()
-   {
-      return this.averageFBGUpdated;
-   }
-
-   public void setAverageFBGUpdated(java.lang.Boolean averageFBGUpdated)
-   {
-      this.averageFBGUpdated = averageFBGUpdated;
-   }
-
-   public java.lang.Boolean getFbgVarianceUpdated()
-   {
-      return this.fbgVarianceUpdated;
-   }
-
-   public void setFbgVarianceUpdated(java.lang.Boolean fbgVarianceUpdated)
-   {
-      this.fbgVarianceUpdated = fbgVarianceUpdated;
-   }
-
-   public java.lang.Boolean getAverageTwoHpgUpdated()
-   {
-      return this.averageTwoHpgUpdated;
-   }
-
-   public void setAverageTwoHpgUpdated(java.lang.Boolean averageTwoHpgUpdated)
-   {
-      this.averageTwoHpgUpdated = averageTwoHpgUpdated;
-   }
-
-   public java.lang.Boolean getTwoHpgVarianceUpdated()
-   {
-      return this.twoHpgVarianceUpdated;
-   }
-
-   public void setTwoHpgVarianceUpdated(java.lang.Boolean twoHpgVarianceUpdated)
-   {
-      this.twoHpgVarianceUpdated = twoHpgVarianceUpdated;
-   }
-
    public Statistic(java.lang.Integer fbgCount, java.lang.Integer fbgNormalCount,
          java.lang.Double fbgNormalPercentage, java.lang.Integer twoHpgCount,
          java.lang.Double twoHpgNormalPercentage,
@@ -326,17 +203,7 @@ public class Statistic implements java.io.Serializable
          java.lang.Double fbgStandardDeviation, java.lang.Double fbgVariance,
          java.lang.Double averageTwoHpg,
          java.lang.Double twoHpgStandardDeviation,
-         java.lang.Double twoHpgVariance, java.lang.Integer twoHpgNormalCount,
-         java.lang.Boolean fbgCountUpdated,
-         java.lang.Boolean fbgNormalCountUpdated,
-         java.lang.Boolean twoHpgCountUpdated,
-         java.lang.Boolean twoHpgNormalCountUpdated,
-         java.lang.Boolean hypoglycemiaCountUpdated,
-         java.lang.Boolean hyperglycemiaCountUpdated,
-         java.lang.Boolean averageFBGUpdated,
-         java.lang.Boolean fbgVarianceUpdated,
-         java.lang.Boolean averageTwoHpgUpdated,
-         java.lang.Boolean twoHpgVarianceUpdated)
+         java.lang.Double twoHpgVariance, java.lang.Integer twoHpgNormalCount)
    {
       this.fbgCount = fbgCount;
       this.fbgNormalCount = fbgNormalCount;
@@ -352,16 +219,6 @@ public class Statistic implements java.io.Serializable
       this.twoHpgStandardDeviation = twoHpgStandardDeviation;
       this.twoHpgVariance = twoHpgVariance;
       this.twoHpgNormalCount = twoHpgNormalCount;
-      this.fbgCountUpdated = fbgCountUpdated;
-      this.fbgNormalCountUpdated = fbgNormalCountUpdated;
-      this.twoHpgCountUpdated = twoHpgCountUpdated;
-      this.twoHpgNormalCountUpdated = twoHpgNormalCountUpdated;
-      this.hypoglycemiaCountUpdated = hypoglycemiaCountUpdated;
-      this.hyperglycemiaCountUpdated = hyperglycemiaCountUpdated;
-      this.averageFBGUpdated = averageFBGUpdated;
-      this.fbgVarianceUpdated = fbgVarianceUpdated;
-      this.averageTwoHpgUpdated = averageTwoHpgUpdated;
-      this.twoHpgVarianceUpdated = twoHpgVarianceUpdated;
    }
 
 }
