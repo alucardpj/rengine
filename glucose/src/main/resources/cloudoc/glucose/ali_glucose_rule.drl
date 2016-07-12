@@ -5,7 +5,7 @@ rule "ali rule row 1"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage >= 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -17,7 +17,7 @@ rule "ali rule row 2"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -29,7 +29,7 @@ rule "ali rule row 3"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -41,7 +41,7 @@ rule "ali rule row 4"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -53,7 +53,7 @@ rule "ali rule row 5"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage >= 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -65,7 +65,7 @@ rule "ali rule row 6"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -77,7 +77,7 @@ rule "ali rule row 7"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -89,7 +89,7 @@ rule "ali rule row 8"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -101,7 +101,7 @@ rule "ali rule row 9"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage >= 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -113,7 +113,7 @@ rule "ali rule row 10"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -125,7 +125,7 @@ rule "ali rule row 11"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -137,7 +137,7 @@ rule "ali rule row 12"
 	dialect "mvel"
 	ruleflow-group "ali_determination"
 	when
-		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 , isOADUsed == false )
 		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
 	then
 		Conclusion $c = new Conclusion();
@@ -162,9 +162,81 @@ rule "ali rule row 14"
 	ruleflow-group "ali_determination"
 	when
 		$p : Patient( isInsulinUsed == false , isOADUsed == true )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "14" );
+		insert( $c );
+end
+
+rule "ali rule row 15"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == false , isOADUsed == true )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "15" );
+		insert( $c );
+end
+
+rule "ali rule row 16"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == false , isOADUsed == true )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "16" );
+		insert( $c );
+end
+
+rule "ali rule row 17"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , isOADUsed == true )
 		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage >= 0.6 )
 	then
 		Conclusion $c = new Conclusion();
-		$c.setTitle( "13" );
+		$c.setTitle( "17" );
+		insert( $c );
+end
+
+rule "ali rule row 18"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , isOADUsed == true )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "18" );
+		insert( $c );
+end
+
+rule "ali rule row 19"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , isOADUsed == true )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "19" );
+		insert( $c );
+end
+
+rule "ali rule row 20"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , isOADUsed == true )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "20" );
 		insert( $c );
 end
