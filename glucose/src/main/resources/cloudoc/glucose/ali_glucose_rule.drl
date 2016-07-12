@@ -84,3 +84,27 @@ rule "ali rule row 7"
 		$c.setTitle( "7" );
 		insert( $c );
 end
+
+rule "ali rule row 8"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "8" );
+		insert( $c );
+end
+
+rule "ali rule row 9"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "9" );
+		insert( $c );
+end
