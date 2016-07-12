@@ -18,6 +18,14 @@ public class Patient implements java.io.Serializable
    private java.lang.Integer sbp;
    private java.lang.Integer dbp;
 
+   private java.lang.Integer dm_type;
+
+   private java.lang.Boolean isInsulinUsed;
+
+   private java.lang.Integer insulinFrequency;
+
+   private java.lang.Boolean isOADUsed;
+
    public Patient()
    {
    }
@@ -102,10 +110,52 @@ public class Patient implements java.io.Serializable
       this.dbp = dbp;
    }
 
+   public java.lang.Integer getDm_type()
+   {
+      return this.dm_type;
+   }
+
+   public void setDm_type(java.lang.Integer dm_type)
+   {
+      this.dm_type = dm_type;
+   }
+
+   public java.lang.Boolean getIsInsulinUsed()
+   {
+      return this.isInsulinUsed;
+   }
+
+   public void setIsInsulinUsed(java.lang.Boolean isInsulinUsed)
+   {
+      this.isInsulinUsed = isInsulinUsed;
+   }
+
+   public java.lang.Integer getInsulinFrequency()
+   {
+      return this.insulinFrequency;
+   }
+
+   public void setInsulinFrequency(java.lang.Integer insulinFrequency)
+   {
+      this.insulinFrequency = insulinFrequency;
+   }
+
+   public java.lang.Boolean getIsOADUsed()
+   {
+      return this.isOADUsed;
+   }
+
+   public void setIsOADUsed(java.lang.Boolean isOADUsed)
+   {
+      this.isOADUsed = isOADUsed;
+   }
+
    public Patient(java.lang.Integer sex, java.lang.Float weight,
          java.lang.Float height, java.lang.Boolean isDiabetes,
          java.lang.Float hba1c, java.lang.Boolean isHypertension,
-         java.lang.Integer sbp, java.lang.Integer dbp)
+         java.lang.Integer sbp, java.lang.Integer dbp,
+         java.lang.Integer dm_type, java.lang.Boolean isInsulinUsed,
+         java.lang.Integer insulinFrequency, java.lang.Boolean isOADUsed)
    {
       this.sex = sex;
       this.weight = weight;
@@ -115,6 +165,10 @@ public class Patient implements java.io.Serializable
       this.isHypertension = isHypertension;
       this.sbp = sbp;
       this.dbp = dbp;
+      this.dm_type = dm_type;
+      this.isInsulinUsed = isInsulinUsed;
+      this.insulinFrequency = insulinFrequency;
+      this.isOADUsed = isOADUsed;
    }
 
 }
