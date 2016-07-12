@@ -108,3 +108,51 @@ rule "ali rule row 9"
 		$c.setTitle( "9" );
 		insert( $c );
 end
+
+rule "ali rule row 10"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "10" );
+		insert( $c );
+end
+
+rule "ali rule row 11"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "11" );
+		insert( $c );
+end
+
+rule "ali rule row 12"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 1 )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "12" );
+		insert( $c );
+end
+
+rule "ali rule row 13"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == false , insulinFrequency == 1 )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "12" );
+		insert( $c );
+end
