@@ -1,2 +1,86 @@
 package cloudoc.glucose;
 
+//from row number: 1
+rule "ali rule row 1"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "1" );
+		insert( $c );
+end
+
+rule "ali rule row 2"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "2" );
+		insert( $c );
+end
+
+rule "ali rule row 3"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "3" );
+		insert( $c );
+end
+
+rule "ali rule row 4"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency >= 3 )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "4" );
+		insert( $c );
+end
+
+rule "ali rule row 5"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage >= 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "5" );
+		insert( $c );
+end
+
+rule "ali rule row 6"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$s : Statistic( fbgNormalPercentage >= 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "6" );
+		insert( $c );
+end
+
+rule "ali rule row 7"
+	dialect "mvel"
+	ruleflow-group "ali_determination"
+	when
+		$p : Patient( isInsulinUsed == true , insulinFrequency == 2 )
+		$s : Statistic( fbgNormalPercentage < 0.6, twoHpgNormalPercentage < 0.6 )
+	then
+		Conclusion $c = new Conclusion();
+		$c.setTitle( "7" );
+		insert( $c );
+end
